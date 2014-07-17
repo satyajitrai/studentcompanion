@@ -1,0 +1,64 @@
+User
+- id (internal only)
+- user name/email
+- password
+- role
+
+Role
+- id
+- name
+- description
+
+Class
+- id
+- name
+- overall gpa
+- type (honors, AP, regular)
+- Grade percent from assignments
+- grade percent from quiz
+- grade percent from final
+
+class type
+- id 
+- name
+
+Tasks
+- id
+- type_id (quiz, final, assignment)
+- class id
+- name
+- description 
+- due date
+- grade
+
+
+Reminders
+- task id
+- date 
+
+task type (quiz, final, assignment)
+- id
+- name
+- description
+
+Target University
+- studentid
+- university id
+
+University
+- id
+- name
+- city, 
+- state
+- type - high school, under grad, grad
+- min. gpa
+
+Settings
+- student name 
+- program - high school/under grad/ grad
+- program name
+- year - freshman, sophmore, junior, senior
+
+
+
+
