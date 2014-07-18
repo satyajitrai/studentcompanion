@@ -7,11 +7,20 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import "User.h"
+
+
+@interface AppDelegate()
+
+@end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self setUpParse];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -44,6 +53,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Parse Setup
+- (void) setUpParse {
+    // First Register the classes
+    [User registerSubclass];
+
+    // Read the parse.plist file and set up the application
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"parse" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSString *applicationId = [dict objectForKey:@"application_id"];
+    NSString *clientKey = [dict objectForKey:@"client_key"];
+    [Parse setApplicationId:applicationId clientKey:clientKey];
 }
 
 @end
