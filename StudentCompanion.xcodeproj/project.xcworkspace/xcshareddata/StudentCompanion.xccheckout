@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BA3DAFE8-CEA4-4AF6-A76A-A99540CE9035</string>
+	<key>IDESourceControlProjectName</key>
+	<string>StudentCompanion</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1739EDDB-5D77-46CE-8AD6-7486C941E48D</key>
+		<string>ssh://github.com/satyajitrai/studentcompanion.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>StudentCompanion/StudentCompanion.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1739EDDB-5D77-46CE-8AD6-7486C941E48D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/satyajitrai/studentcompanion.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1739EDDB-5D77-46CE-8AD6-7486C941E48D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1739EDDB-5D77-46CE-8AD6-7486C941E48D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>studentcompanion</string>
+		</dict>
+	</array>
+</dict>
+</plist>
