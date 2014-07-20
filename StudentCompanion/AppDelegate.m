@@ -74,12 +74,55 @@
     NSString *clientKey = [dict objectForKey:@"client_key"];
     [Parse setApplicationId:applicationId clientKey:clientKey];
     
-    [self testCourse];
+    
+    if ([User currentUser]) {
+        NSLog(@"Signed in");
+        [self findCourses];
+    } else {
+        [self signUpUser];
+        [self loginUser];
+    }
 }
 
-- (void)testCourse {
+- (void)signUpUser {
+    User *user = [User object];
+    user.username = @"sraitest@example.com";
+    user.password = @"sraitest";
+    user.displayName = @"Satyajit Rai";
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Sign up successful for user %@", user.displayName);
+         } else {
+            NSLog(@"Sign up failed. Error: %@", [error userInfo][@"error"]);
+        }
+    }];
+}
+
+- (void)loginUser {
+    [PFUser logInWithUsernameInBackground:@"sraitest@example.com" password:@"sraitest"
+                                    block:^(PFUser *user, NSError *error) {
+        if (!error) {
+            NSLog(@"User id is %@", user.objectId);
+            [self onLogin:(User*)user];
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+            NSLog(@"Error %@", errorString);
+        }
+    }];
+}
+
+- (void)onLogin:(User*)user {
+    NSLog(@"Called onLogin");
+    NSLog(@"Adding a course for user %@", user);
+    [self findCourses];
+}
+
+- (void)addCourse:(User*)user {
     Course *c = [Course object];
     c.name = @"Maths";
+    c.user = user;
     c.assignmentGradePercent = @50;
     c.overallGpa = @9.5;
     c.courseType = CourseTypeRegular;
@@ -88,11 +131,49 @@
     
     [c saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"Save successful");
+            NSLog(@"Course Save successful. Id is %@", c.objectId);
         } else {
             NSLog(@"Failed. Error: %@", error);
         }
     }];
+}
+
+- (void) findCourses {
+    
+    PFQuery *query = [PFQuery queryWithClassName: Course.parseClassName];
+    [query whereKey:@"user" equalTo:[User currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"0. Got %d courses", objects.count);
+        for(Course *c in objects) {
+            NSLog(@"Course: %@", c);
+        }
+        
+        if (objects.count == 0) {
+            [self addCourse:[User currentUser]];
+        }
+    }];
+    
+    [[User currentUser] getCoursesWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"1. Got %d courses", objects.count);
+        for(Course *c in objects) {
+            NSLog(@"Course: %@", c);
+        }
+    }];
+}
+
+- (void) createTaskTypes {
+    NSArray * standardTasks = @[@"Quiz", @"Assignment", @"Final"];
+    for (NSString *taskName in standardTasks) {
+        TaskType *taskType = [TaskType object];
+        taskType.name = taskName;
+        taskType.description = taskName;
+        [taskType saveInBackground];
+    }
+}
+
+- (void) testTask {
+    Task * t = [Task object];
+    t.user = [User currentUser];
 }
 
 @end

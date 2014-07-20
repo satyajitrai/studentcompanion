@@ -16,7 +16,9 @@
 }
 
 
-@dynamic taskTypeId;
+@dynamic taskType;
+@dynamic user;
+@dynamic course;
 @dynamic name;
 @dynamic courseId;
 @dynamic description;

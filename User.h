@@ -17,4 +17,6 @@
 @property (assign) NSString *programName;
 @property (assign) NSString *yearType;
 
+- (void)getCoursesWithBlock:(void(^)(NSArray *objects, NSError *error))block;
+
 @end
