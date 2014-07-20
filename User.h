@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "University.h"
 
 @interface User : PFUser<PFSubclassing>
 
 @property (retain) NSString *displayName;
+@property (assign) ProgramType programType;
+@property (assign) NSString *programName;
+@property (assign) NSString *yearType;
 
 @end

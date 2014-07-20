@@ -12,5 +12,8 @@
 @implementation User
 
 @dynamic displayName;
+@dynamic programType;
+@dynamic programName;
+@dynamic yearType;
 
 @end

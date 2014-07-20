@@ -9,7 +9,10 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "User.h"
-
+#import "Course.h"
+#import "Task.h"
+#import "TaskType.h"
+#import "University.h"
 
 @interface AppDelegate()
 
@@ -59,6 +62,10 @@
 - (void) setUpParse {
     // First Register the classes
     [User registerSubclass];
+    [Course registerSubclass];
+    [Task registerSubclass];
+    [TaskType registerSubclass];
+    [University registerSubclass];
 
     // Read the parse.plist file and set up the application
     NSString *path = [[NSBundle mainBundle] pathForResource:@"parse" ofType:@"plist"];
@@ -66,6 +73,26 @@
     NSString *applicationId = [dict objectForKey:@"application_id"];
     NSString *clientKey = [dict objectForKey:@"client_key"];
     [Parse setApplicationId:applicationId clientKey:clientKey];
+    
+    [self testCourse];
+}
+
+- (void)testCourse {
+    Course *c = [Course object];
+    c.name = @"Maths";
+    c.assignmentGradePercent = @50;
+    c.overallGpa = @9.5;
+    c.courseType = CourseTypeRegular;
+    c.quizGradePercent = @30;
+    c.finalGradePercent = @20;
+    
+    [c saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Save successful");
+        } else {
+            NSLog(@"Failed. Error: %@", error);
+        }
+    }];
 }
 
 @end

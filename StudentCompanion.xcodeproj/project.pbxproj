@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		348F17E219797BBC00385B8D /* parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348F17E119797BBC00385B8D /* parse.plist */; };
+		348F17E8197ACE2B00385B8D /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17E7197ACE2B00385B8D /* Course.m */; };
+		348F17EF197AEFC600385B8D /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17EE197AEFC600385B8D /* Task.m */; };
+		348F17F2197B6E8500385B8D /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17F1197B6E8500385B8D /* TaskType.m */; };
+		348F17F5197B6F1600385B8D /* University.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17F4197B6F1600385B8D /* University.m */; };
 		34C3CB6619789B58008E5DCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6519789B58008E5DCB /* Foundation.framework */; };
 		34C3CB6819789B58008E5DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6719789B58008E5DCB /* CoreGraphics.framework */; };
 		34C3CB6A19789B58008E5DCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6919789B58008E5DCB /* UIKit.framework */; };
@@ -36,6 +40,14 @@
 
 /* Begin PBXFileReference section */
 		348F17E119797BBC00385B8D /* parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parse.plist; sourceTree = "<group>"; };
+		348F17E6197ACE2B00385B8D /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		348F17E7197ACE2B00385B8D /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		348F17ED197AEFC600385B8D /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		348F17EE197AEFC600385B8D /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		348F17F0197B6E8500385B8D /* TaskType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskType.h; sourceTree = "<group>"; };
+		348F17F1197B6E8500385B8D /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
+		348F17F3197B6F1600385B8D /* University.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = University.h; sourceTree = "<group>"; };
+		348F17F4197B6F1600385B8D /* University.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = University.m; sourceTree = "<group>"; };
 		34C3CB6219789B58008E5DCB /* StudentCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C3CB6519789B58008E5DCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34C3CB6719789B58008E5DCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,6 +175,14 @@
 			children = (
 				34F550491979696700F75724 /* User.h */,
 				34F5504A1979696700F75724 /* User.m */,
+				348F17E6197ACE2B00385B8D /* Course.h */,
+				348F17E7197ACE2B00385B8D /* Course.m */,
+				348F17ED197AEFC600385B8D /* Task.h */,
+				348F17EE197AEFC600385B8D /* Task.m */,
+				348F17F0197B6E8500385B8D /* TaskType.h */,
+				348F17F1197B6E8500385B8D /* TaskType.m */,
+				348F17F3197B6F1600385B8D /* University.h */,
+				348F17F4197B6F1600385B8D /* University.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -305,9 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348F17EF197AEFC600385B8D /* Task.m in Sources */,
+				348F17E8197ACE2B00385B8D /* Course.m in Sources */,
+				348F17F2197B6E8500385B8D /* TaskType.m in Sources */,
 				34C3CB7619789B58008E5DCB /* AppDelegate.m in Sources */,
 				34C3CB7219789B58008E5DCB /* main.m in Sources */,
 				34F5504B1979696700F75724 /* User.m in Sources */,
+				348F17F5197B6F1600385B8D /* University.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
