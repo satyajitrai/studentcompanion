@@ -12,6 +12,8 @@
 		348F17EF197AEFC600385B8D /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17EE197AEFC600385B8D /* Task.m */; };
 		348F17F2197B6E8500385B8D /* TaskType.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17F1197B6E8500385B8D /* TaskType.m */; };
 		348F17F5197B6F1600385B8D /* University.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17F4197B6F1600385B8D /* University.m */; };
+		348F17F9197D635C00385B8D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17F7197D635C00385B8D /* SettingsViewController.m */; };
+		348F17FA197D635C00385B8D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348F17F8197D635C00385B8D /* SettingsViewController.xib */; };
 		34C3CB6619789B58008E5DCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6519789B58008E5DCB /* Foundation.framework */; };
 		34C3CB6819789B58008E5DCB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6719789B58008E5DCB /* CoreGraphics.framework */; };
 		34C3CB6A19789B58008E5DCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6919789B58008E5DCB /* UIKit.framework */; };
@@ -54,6 +56,9 @@
 		348F17F1197B6E8500385B8D /* TaskType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskType.m; sourceTree = "<group>"; };
 		348F17F3197B6F1600385B8D /* University.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = University.h; sourceTree = "<group>"; };
 		348F17F4197B6F1600385B8D /* University.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = University.m; sourceTree = "<group>"; };
+		348F17F6197D635C00385B8D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		348F17F7197D635C00385B8D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		348F17F8197D635C00385B8D /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		34C3CB6219789B58008E5DCB /* StudentCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C3CB6519789B58008E5DCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34C3CB6719789B58008E5DCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +165,9 @@
 				487568D8197C9BA800D20AD7 /* CourseListViewController.h */,
 				487568D9197C9BA800D20AD7 /* CourseListViewController.m */,
 				487568DA197C9BA800D20AD7 /* CourseListViewController.xib */,
+				348F17F6197D635C00385B8D /* SettingsViewController.h */,
+				348F17F7197D635C00385B8D /* SettingsViewController.m */,
+				348F17F8197D635C00385B8D /* SettingsViewController.xib */,
 			);
 			path = StudentCompanion;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 				34C3CB7019789B58008E5DCB /* InfoPlist.strings in Resources */,
 				34C3CB7819789B58008E5DCB /* Images.xcassets in Resources */,
 				487568DC197C9BA800D20AD7 /* CourseListViewController.xib in Resources */,
+				348F17FA197D635C00385B8D /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +366,7 @@
 				487568D6197C973B00D20AD7 /* CourseAddViewController.m in Sources */,
 				348F17E8197ACE2B00385B8D /* Course.m in Sources */,
 				348F17F2197B6E8500385B8D /* TaskType.m in Sources */,
+				348F17F9197D635C00385B8D /* SettingsViewController.m in Sources */,
 				34C3CB7619789B58008E5DCB /* AppDelegate.m in Sources */,
 				487568C7197C423500D20AD7 /* MainViewController.m in Sources */,
 				34C3CB7219789B58008E5DCB /* main.m in Sources */,

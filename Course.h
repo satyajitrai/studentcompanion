@@ -7,6 +7,9 @@
 //
 
 #import <Parse/Parse.h>
+#import "User.h"
+
+@class User;
 
 typedef NS_ENUM(NSInteger, CourseType) {
     CourseTypeRegular,
@@ -20,6 +23,7 @@ typedef NS_ENUM(NSInteger, CourseType) {
 + (NSString*)nameForCourseType:(CourseType)courseType;
 
 @property (retain) NSString *name;
+@property (retain) User *user;
 @property (retain) NSNumber *overallGpa;
 @property (assign) CourseType courseType;
 @property (retain) NSNumber *assignmentGradePercent;

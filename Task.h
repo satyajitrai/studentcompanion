@@ -7,12 +7,15 @@
 //
 
 #import <Parse/Parse.h>
+#import "TaskType.h"
+#import "Course.h"
 
 @interface Task : PFObject <PFSubclassing>
 
 + (NSString *)parseClassName;
 
-@property (retain) NSString *taskTypeId;
+@property (retain) TaskType *taskType;
+@property (retain) Course *course;
 @property (retain) NSString *name;
 @property (retain) NSString *courseId;
 @property (retain) NSString *description;

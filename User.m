@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import <Parse/PFObject+Subclass.h>
+#import "Course.h"
 
 @implementation User
 
@@ -15,5 +16,17 @@
 @dynamic programType;
 @dynamic programName;
 @dynamic yearType;
+
+- (void)getCoursesWithBlock:(void(^)(NSArray *objects, NSError *error))block {
+    PFQuery *query = [PFQuery queryWithClassName:[Course parseClassName]];
+    [query whereKey:@"user" equalTo:(User*)self];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+- (void) addCourse:(Course *)course withBlock:(void(^)(BOOL succeeded, NSError *error))block {
+    course.user = [User currentUser];
+    [course saveInBackgroundWithBlock:block];
+}
 
 @end
