@@ -13,7 +13,7 @@
 #import "Task.h"
 #import "TaskType.h"
 #import "University.h"
-#import "SettingsViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate()
 
@@ -23,10 +23,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setUpParse];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[SettingsViewController alloc] init];
+    [self setupMainView];
+    
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -76,55 +79,12 @@
     NSString *clientKey = [dict objectForKey:@"client_key"];
     [Parse setApplicationId:applicationId clientKey:clientKey];
     
-    
-    if ([User currentUser]) {
-        NSLog(@"Signed in");
-        [self findCourses];
-    } else {
-        [self signUpUser];
-        [self loginUser];
-    }
+    [self testCourse];
 }
 
-- (void)signUpUser {
-    User *user = [User object];
-    user.username = @"sraitest@example.com";
-    user.password = @"sraitest";
-    user.displayName = @"Satyajit Rai";
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Sign up successful for user %@", user.displayName);
-         } else {
-            NSLog(@"Sign up failed. Error: %@", [error userInfo][@"error"]);
-        }
-    }];
-}
-
-- (void)loginUser {
-    [PFUser logInWithUsernameInBackground:@"sraitest@example.com" password:@"sraitest"
-                                    block:^(PFUser *user, NSError *error) {
-        if (!error) {
-            NSLog(@"User id is %@", user.objectId);
-            [self onLogin:(User*)user];
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-            NSLog(@"Error %@", errorString);
-        }
-    }];
-}
-
-- (void)onLogin:(User*)user {
-    NSLog(@"Called onLogin");
-    NSLog(@"Adding a course for user %@", user);
-    [self findCourses];
-}
-
-- (void)addCourse:(User*)user {
+- (void)testCourse {
     Course *c = [Course object];
     c.name = @"Maths";
-    c.user = user;
     c.assignmentGradePercent = @50;
     c.overallGpa = @9.5;
     c.courseType = CourseTypeRegular;
@@ -133,38 +93,17 @@
     
     [c saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"Course Save successful. Id is %@", c.objectId);
+            NSLog(@"Save successful");
         } else {
             NSLog(@"Failed. Error: %@", error);
         }
     }];
 }
 
-- (void) findCourses {
-    [[User currentUser] getCoursesWithBlock:^(NSArray *objects, NSError *error) {
-        NSLog(@"1. Got %d courses", objects.count);
-        for(Course *c in objects) {
-            NSLog(@"Course: %@", c);
-        }
-        
-        if (objects.count == 0) {
-            [self addCourse:[User currentUser]];
-        }
-    }];
-}
-
-- (void) createTaskTypes {
-    NSArray * standardTasks = @[@"Quiz", @"Assignment", @"Final"];
-    for (NSString *taskName in standardTasks) {
-        TaskType *taskType = [TaskType object];
-        taskType.name = taskName;
-        taskType.description = taskName;
-        [taskType saveInBackground];
-    }
-}
-
-- (void) testTask {
-    Task * t = [Task object];
+- (void) setupMainView {
+    self.mvc = [[MainViewController alloc] init];
+    self.nc = [[UINavigationController alloc] initWithRootViewController:self.mvc];
+    self.window.rootViewController = self.nc;
 }
 
 @end
