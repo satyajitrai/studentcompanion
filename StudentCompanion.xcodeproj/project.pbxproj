@@ -25,6 +25,12 @@
 		34C3CB8919789B59008E5DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34C3CB8719789B59008E5DCB /* InfoPlist.strings */; };
 		34C3CB8B19789B59008E5DCB /* StudentCompanionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3CB8A19789B59008E5DCB /* StudentCompanionTests.m */; };
 		34F5504B1979696700F75724 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F5504A1979696700F75724 /* User.m */; };
+		487568C7197C423500D20AD7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487568C5197C423500D20AD7 /* MainViewController.m */; };
+		487568C8197C423500D20AD7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487568C6197C423500D20AD7 /* MainViewController.xib */; };
+		487568D6197C973B00D20AD7 /* CourseAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487568D4197C973B00D20AD7 /* CourseAddViewController.m */; };
+		487568D7197C973B00D20AD7 /* CourseAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487568D5197C973B00D20AD7 /* CourseAddViewController.xib */; };
+		487568DB197C9BA800D20AD7 /* CourseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487568D9197C9BA800D20AD7 /* CourseListViewController.m */; };
+		487568DC197C9BA800D20AD7 /* CourseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487568DA197C9BA800D20AD7 /* CourseListViewController.xib */; };
 		DF2E748F6EDF464EA975C4F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C1F530FAC84BD39C9B5F2C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +72,15 @@
 		34C3CB8A19789B59008E5DCB /* StudentCompanionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentCompanionTests.m; sourceTree = "<group>"; };
 		34F550491979696700F75724 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		34F5504A1979696700F75724 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		487568C4197C423500D20AD7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		487568C5197C423500D20AD7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		487568C6197C423500D20AD7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		487568D3197C973B00D20AD7 /* CourseAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseAddViewController.h; sourceTree = "<group>"; };
+		487568D4197C973B00D20AD7 /* CourseAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseAddViewController.m; sourceTree = "<group>"; };
+		487568D5197C973B00D20AD7 /* CourseAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseAddViewController.xib; sourceTree = "<group>"; };
+		487568D8197C9BA800D20AD7 /* CourseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseListViewController.h; sourceTree = "<group>"; };
+		487568D9197C9BA800D20AD7 /* CourseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseListViewController.m; sourceTree = "<group>"; };
+		487568DA197C9BA800D20AD7 /* CourseListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseListViewController.xib; sourceTree = "<group>"; };
 		A041BAFF9A184A3BB18ED6B8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B0C1F530FAC84BD39C9B5F2C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +151,15 @@
 				34C3CB7519789B58008E5DCB /* AppDelegate.m */,
 				34C3CB7719789B58008E5DCB /* Images.xcassets */,
 				34C3CB6C19789B58008E5DCB /* Supporting Files */,
+				487568C4197C423500D20AD7 /* MainViewController.h */,
+				487568C5197C423500D20AD7 /* MainViewController.m */,
+				487568C6197C423500D20AD7 /* MainViewController.xib */,
+				487568D3197C973B00D20AD7 /* CourseAddViewController.h */,
+				487568D4197C973B00D20AD7 /* CourseAddViewController.m */,
+				487568D5197C973B00D20AD7 /* CourseAddViewController.xib */,
+				487568D8197C9BA800D20AD7 /* CourseListViewController.h */,
+				487568D9197C9BA800D20AD7 /* CourseListViewController.m */,
+				487568DA197C9BA800D20AD7 /* CourseListViewController.xib */,
 			);
 			path = StudentCompanion;
 			sourceTree = "<group>";
@@ -271,9 +295,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487568D7197C973B00D20AD7 /* CourseAddViewController.xib in Resources */,
 				348F17E219797BBC00385B8D /* parse.plist in Resources */,
+				487568C8197C423500D20AD7 /* MainViewController.xib in Resources */,
 				34C3CB7019789B58008E5DCB /* InfoPlist.strings in Resources */,
 				34C3CB7819789B58008E5DCB /* Images.xcassets in Resources */,
+				487568DC197C9BA800D20AD7 /* CourseListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,9 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				348F17EF197AEFC600385B8D /* Task.m in Sources */,
+				487568DB197C9BA800D20AD7 /* CourseListViewController.m in Sources */,
+				487568D6197C973B00D20AD7 /* CourseAddViewController.m in Sources */,
 				348F17E8197ACE2B00385B8D /* Course.m in Sources */,
 				348F17F2197B6E8500385B8D /* TaskType.m in Sources */,
 				34C3CB7619789B58008E5DCB /* AppDelegate.m in Sources */,
+				487568C7197C423500D20AD7 /* MainViewController.m in Sources */,
 				34C3CB7219789B58008E5DCB /* main.m in Sources */,
 				34F5504B1979696700F75724 /* User.m in Sources */,
 				348F17F5197B6F1600385B8D /* University.m in Sources */,
