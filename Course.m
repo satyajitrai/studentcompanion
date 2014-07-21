@@ -10,11 +10,6 @@
 #import <Parse/PFObject+Subclass.h>
 
 @implementation Course
-
-+ (NSString *)parseClassName {
-    return @"Course";
-}
-
 @dynamic name;
 @dynamic user;
 @dynamic overallGpa;
@@ -22,6 +17,21 @@
 @dynamic assignmentGradePercent;
 @dynamic quizGradePercent;
 @dynamic finalGradePercent;
+
++ (NSString *)parseClassName {
+    return @"Course";
+}
+
++ (NSString*)nameForCourseType:(CourseType)courseType {
+    switch (courseType) {
+        case CourseTypeRegular:
+            return @"Regular";
+        case CourseTypeHonors:
+            return @"Honors";
+        case CourseTypeAP:
+            return @"AP";
+    }
+}
 
 - (NSNumber*)totalGradePercentage {
     double total =  [self.assignmentGradePercent doubleValue] + [self.quizGradePercent doubleValue] + [self.finalGradePercent doubleValue];
@@ -36,16 +46,4 @@
         return NO;
     }
 }
-
-+ (NSString*)nameForCourseType:(CourseType)courseType {
-    switch (courseType) {
-        case CourseTypeRegular:
-            return @"Regular";
-        case CourseTypeHonors:
-            return @"Honors";
-        case CourseTypeAP:
-            return @"AP";
-    }
-}
-
 @end

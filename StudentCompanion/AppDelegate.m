@@ -13,6 +13,7 @@
 #import "Task.h"
 #import "TaskType.h"
 #import "University.h"
+#import "SettingsViewController.h"
 
 @interface AppDelegate()
 
@@ -25,6 +26,7 @@
     [self setUpParse];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[SettingsViewController alloc] init];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -139,24 +141,14 @@
 }
 
 - (void) findCourses {
-    
-    PFQuery *query = [PFQuery queryWithClassName: Course.parseClassName];
-    [query whereKey:@"user" equalTo:[User currentUser]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        NSLog(@"0. Got %d courses", objects.count);
+    [[User currentUser] getCoursesWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"1. Got %d courses", objects.count);
         for(Course *c in objects) {
             NSLog(@"Course: %@", c);
         }
         
         if (objects.count == 0) {
             [self addCourse:[User currentUser]];
-        }
-    }];
-    
-    [[User currentUser] getCoursesWithBlock:^(NSArray *objects, NSError *error) {
-        NSLog(@"1. Got %d courses", objects.count);
-        for(Course *c in objects) {
-            NSLog(@"Course: %@", c);
         }
     }];
 }
@@ -173,7 +165,6 @@
 
 - (void) testTask {
     Task * t = [Task object];
-    t.user = [User currentUser];
 }
 
 @end
