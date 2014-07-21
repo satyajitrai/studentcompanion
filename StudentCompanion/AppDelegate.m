@@ -13,6 +13,7 @@
 #import "Task.h"
 #import "TaskType.h"
 #import "University.h"
+#import "MainViewController.h"
 
 @interface AppDelegate()
 
@@ -22,9 +23,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setUpParse];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self setupMainView];
+    
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -93,6 +98,12 @@
             NSLog(@"Failed. Error: %@", error);
         }
     }];
+}
+
+- (void) setupMainView {
+    self.mvc = [[MainViewController alloc] init];
+    self.nc = [[UINavigationController alloc] initWithRootViewController:self.mvc];
+    self.window.rootViewController = self.nc;
 }
 
 @end
