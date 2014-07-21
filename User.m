@@ -24,8 +24,9 @@
     [query findObjectsInBackgroundWithBlock:block];
 }
 
--(NSString *)description {
-    return [NSString stringWithFormat:@"%@ displayName: %@", super.description, self.displayName];
+- (void) addCourse:(Course *)course withBlock:(void(^)(BOOL succeeded, NSError *error))block {
+    course.user = [User currentUser];
+    [course saveInBackgroundWithBlock:block];
 }
 
 @end
