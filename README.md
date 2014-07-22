@@ -1,4 +1,4 @@
-#Student Companion iOS Application
+# Student Companion iOS Application
 
 Student Companion help organize the information about Courses,
 Universities, and Tasks (Assignment, Exams etc). Here are the
@@ -16,4 +16,5 @@ things a student can do:
 
 # Demo
 Here is the rough sketch of the application:
+
 ![demo](demo.gif "Student Companion Demo")
