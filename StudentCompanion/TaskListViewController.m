@@ -35,9 +35,10 @@
     [super viewDidLoad];
     [self loadTasks];
     [self.taskTableView registerNib:[UINib nibWithNibName:@"TaskCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"TaskCellTableViewCell"] ;
-    self.taskTableView.rowHeight = 150;
+    self.taskTableView.rowHeight = 100;
     self.taskTableView.delegate = self;
     self.taskTableView.dataSource = self;
+    self.tabBarItem.title = @"Tasks";
 }
 
 - (void)didReceiveMemoryWarning

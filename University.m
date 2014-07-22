@@ -21,4 +21,9 @@
 @dynamic programType;
 @dynamic minimumGPA;
 
++ (void)getUniversitiesWithBlock:(void(^)(NSArray *objects, NSError *error))block {
+    PFQuery *query = [PFQuery queryWithClassName:[University parseClassName]];
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
 @end

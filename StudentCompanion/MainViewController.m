@@ -77,7 +77,6 @@
     tabBarController.viewControllers = @[_classListVC,_taskListVC, _universityListVC];
     [self.view addSubview:tabBarController.view];
     [self addChildViewController:tabBarController];
-    
 }
 
 - (void)addClassButtonTap:(id)sender {

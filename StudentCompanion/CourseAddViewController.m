@@ -83,14 +83,13 @@
     c.quizGradePercent = [[NSNumber alloc]initWithInt:[self.quizPercentText.text integerValue]];
     c.finalGradePercent = [[NSNumber alloc]initWithInt:[self.finalPercentText.text integerValue]];
     
-    [c saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [[User currentUser] addCourse:c withBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"Save successful");
+            NSLog(@"Saved course: %@", c);
         } else {
             NSLog(@"Failed. Error: %@", error);
         }
     }];
-    
 }
 
 - (IBAction)onTap:(id)sender {
@@ -102,12 +101,6 @@
 {
     return 1;
 }
-
-/*- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
- {
- //mlabel.text =  [_courseTypes objectAtIndex:row];
- //_courseType = row;
- }*/
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
 {

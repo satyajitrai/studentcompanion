@@ -81,8 +81,6 @@
     NSString *applicationId = [dict objectForKey:@"application_id"];
     NSString *clientKey = [dict objectForKey:@"client_key"];
     [Parse setApplicationId:applicationId clientKey:clientKey];
-    
-    [self testCourse];
 }
 
 - (void)testCourse {
@@ -104,7 +102,6 @@
 }
 
 - (void) setupMainView {
-    
     self.loginVC = [[LoginViewController alloc]init];
     self.signupVC = [[SignupViewController alloc]init];
     if([[PFUser currentUser] isAuthenticated]) {
@@ -114,11 +111,7 @@
     } else {
         self.nc = [[UINavigationController alloc] initWithRootViewController:self.loginVC];
     }
-            self.window.rootViewController = self.nc;
-    
-    
-    
-    
+    self.window.rootViewController = self.nc;
 }
 
 @end

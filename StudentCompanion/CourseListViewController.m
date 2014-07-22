@@ -8,6 +8,8 @@
 
 #import "CourseListViewController.h"
 #import <Parse/Parse.h>
+#import "User.h"
+#import "Course.h"
 
 @interface CourseListViewController (){
     UIRefreshControl *refreshControl;
@@ -32,7 +34,7 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"courselistView: view did load");
+//    NSLog(@"courselistView: view did load");
     [super viewDidLoad];
     self.courseListTableView.delegate = self;
     self.courseListTableView.dataSource = self;
@@ -40,31 +42,23 @@
     
     [self loadCourses];
     [self addPullToRefresh];
-
-    //[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadCourses) userInfo:nil repeats:YES];
-
+    self.tabBarItem.title = @"Courses";
 }
 
 - (void) addPullToRefresh
 {
-    NSLog(@"addPullToRefresh");
     refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(loadCourses) forControlEvents:UIControlEventValueChanged];
     
     NSMutableAttributedString *refreshString = [[NSMutableAttributedString alloc] initWithString:@"Pull To Refresh"];
     [refreshString addAttributes:@{NSForegroundColorAttributeName : [UIColor grayColor]} range:NSMakeRange(0, refreshString.length)];
     refreshControl.attributedTitle = refreshString;
-    
     [self.courseListTableView addSubview:refreshControl];
     
 }
 
 - (void) loadCourses{
-    PFQuery *query = [PFQuery queryWithClassName:@"Course"];
-    //[query orderByDescending:@"createdAt"];
-    //[query includeKey:@"name"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        NSLog(@"Got data: %@");
+    [[User currentUser] getCoursesWithBlock:^(NSArray *objects, NSError *error) {
         if (objects != nil){
             self.courses = objects;
             [self.courseListTableView reloadData];
@@ -86,15 +80,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellforRowAtIndex");
-    //PFObject *user = self.messages[indexPath.row][@"user"];
-    
-    NSString *courseName = self.courses[indexPath.row][@"name"];
-    NSString *gpa = self.courses[indexPath.row][@"overallGpa"];
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
+    Course *course = self.courses[indexPath.row];
+    NSString *courseName = course.name;
+    NSNumber *gpa = course.overallGpa;
     cell.textLabel.text = [NSString stringWithFormat:@"%@: GPA:%@", courseName, gpa];
-    //cell.text = self.messages[indexPath.row][@"text"];
     return cell;
 }
 

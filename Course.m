@@ -16,6 +16,7 @@
 }
 
 @dynamic name;
+@dynamic user;
 @dynamic overallGpa;
 @dynamic courseType;
 @dynamic assignmentGradePercent;

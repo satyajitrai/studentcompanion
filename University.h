@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, YearType) {
 @interface University : PFObject<PFSubclassing>
 
 + (NSString *)parseClassName;
++(void)getUniversitiesWithBlock:(void(^)(NSArray *objects, NSError *error))block;
 
 @property (retain) NSString *name;
 @property (retain) NSString *city;

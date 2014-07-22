@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UniversityListViewController : UIViewController
+@interface UniversityListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

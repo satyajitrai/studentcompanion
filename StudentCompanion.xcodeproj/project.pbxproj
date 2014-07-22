@@ -19,6 +19,7 @@
 		155200EB197DE16100816766 /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200E7197DE16100816766 /* TaskListViewController.xib */; };
 		155200EF197DE96E00816766 /* UniversityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200ED197DE96E00816766 /* UniversityListViewController.m */; };
 		155200F0197DE96E00816766 /* UniversityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200EE197DE96E00816766 /* UniversityListViewController.xib */; };
+		34862ED1197E2E0500654362 /* TargetUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = 34862ED0197E2E0500654362 /* TargetUniversity.m */; };
 		348F17E219797BBC00385B8D /* parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348F17E119797BBC00385B8D /* parse.plist */; };
 		348F17E8197ACE2B00385B8D /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17E7197ACE2B00385B8D /* Course.m */; };
 		348F17EF197AEFC600385B8D /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17EE197AEFC600385B8D /* Task.m */; };
@@ -77,6 +78,8 @@
 		155200EC197DE96E00816766 /* UniversityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversityListViewController.h; sourceTree = "<group>"; };
 		155200ED197DE96E00816766 /* UniversityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversityListViewController.m; sourceTree = "<group>"; };
 		155200EE197DE96E00816766 /* UniversityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityListViewController.xib; sourceTree = "<group>"; };
+		34862ECF197E2E0500654362 /* TargetUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetUniversity.h; sourceTree = "<group>"; };
+		34862ED0197E2E0500654362 /* TargetUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetUniversity.m; sourceTree = "<group>"; };
 		348F17E119797BBC00385B8D /* parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parse.plist; sourceTree = "<group>"; };
 		348F17E6197ACE2B00385B8D /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		348F17E7197ACE2B00385B8D /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
@@ -99,7 +102,7 @@
 		34C3CB7319789B58008E5DCB /* StudentCompanion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudentCompanion-Prefix.pch"; sourceTree = "<group>"; };
 		34C3CB7419789B58008E5DCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34C3CB7519789B58008E5DCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		34C3CB7719789B58008E5DCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		34C3CB7719789B58008E5DCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StudentCompanion/Images.xcassets; sourceTree = "<group>"; };
 		34C3CB7D19789B59008E5DCB /* StudentCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C3CB7E19789B59008E5DCB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		34C3CB8619789B59008E5DCB /* StudentCompanionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StudentCompanionTests-Info.plist"; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				348F17E119797BBC00385B8D /* parse.plist */,
+				34C3CB7719789B58008E5DCB /* Images.xcassets */,
+				34C3CB6C19789B58008E5DCB /* Supporting Files */,
 				34F550481979694E00F75724 /* API */,
 				34C3CB6B19789B58008E5DCB /* StudentCompanion */,
 				34C3CB8419789B59008E5DCB /* StudentCompanionTests */,
@@ -199,8 +204,6 @@
 				155200CE197DE10400816766 /* LoginViewController.h */,
 				34C3CB7419789B58008E5DCB /* AppDelegate.h */,
 				34C3CB7519789B58008E5DCB /* AppDelegate.m */,
-				34C3CB7719789B58008E5DCB /* Images.xcassets */,
-				34C3CB6C19789B58008E5DCB /* Supporting Files */,
 				487568C4197C423500D20AD7 /* MainViewController.h */,
 				487568C5197C423500D20AD7 /* MainViewController.m */,
 				487568C6197C423500D20AD7 /* MainViewController.xib */,
@@ -229,6 +232,7 @@
 				34C3CB7319789B58008E5DCB /* StudentCompanion-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = StudentCompanion;
 			sourceTree = "<group>";
 		};
 		34C3CB8419789B59008E5DCB /* StudentCompanionTests */ = {
@@ -263,6 +267,8 @@
 				348F17F1197B6E8500385B8D /* TaskType.m */,
 				348F17F3197B6F1600385B8D /* University.h */,
 				348F17F4197B6F1600385B8D /* University.m */,
+				34862ECF197E2E0500654362 /* TargetUniversity.h */,
+				34862ED0197E2E0500654362 /* TargetUniversity.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 				155200EF197DE96E00816766 /* UniversityListViewController.m in Sources */,
 				155200DB197DE14500816766 /* LoginViewController.m in Sources */,
 				155200E8197DE16100816766 /* TaskCellTableViewCell.m in Sources */,
+				34862ED1197E2E0500654362 /* TargetUniversity.m in Sources */,
 				487568DB197C9BA800D20AD7 /* CourseListViewController.m in Sources */,
 				487568D6197C973B00D20AD7 /* CourseAddViewController.m in Sources */,
 				348F17E8197ACE2B00385B8D /* Course.m in Sources */,
