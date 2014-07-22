@@ -9,10 +9,14 @@
 #import "MainViewController.h"
 #import "CourseListViewController.h"
 #import "CourseAddViewController.h"
+#import "TaskListViewController.h"
+#import "UniversityListViewController.h"
 
 @interface MainViewController ()
 @property (strong, nonatomic) CourseListViewController *classListVC;
 @property (strong, nonatomic) CourseAddViewController *classAddVC;
+@property (strong, nonatomic) TaskListViewController *taskListVC;
+@property (strong, nonatomic) UniversityListViewController *universityListVC;
 
 @property (strong, nonatomic) UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) UIBarButtonItem *addButton;
@@ -59,11 +63,20 @@
     
     self.navigationItem.rightBarButtonItem = self.addButton;
     self.classListVC = [[CourseListViewController alloc] init];
-    
-    [self.view addSubview:self.classListVC.view];
-    [self addChildViewController:_classListVC];
+    self.taskListVC = [[TaskListViewController alloc]init];
+    self.universityListVC = [[UniversityListViewController alloc]init];
+//    [self.view addSubview:self.classListVC.view];
+//    [self addChildViewController:_classListVC];
     
     [_classListVC didMoveToParentViewController:self];
+    
+     UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.tabBarItem.title = @"Tasks";
+    tabBarController.tabBarItem.title = @"Courses";
+    tabBarController.tabBarItem.title = @"University";
+    tabBarController.viewControllers = @[_classListVC,_taskListVC, _universityListVC];
+    [self.view addSubview:tabBarController.view];
+    [self addChildViewController:tabBarController];
     
 }
 

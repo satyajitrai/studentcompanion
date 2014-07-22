@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155200CF197DE10400816766 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200BF197DE10400816766 /* AddTaskViewController.m */; };
+		155200D0197DE10400816766 /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200C0197DE10400816766 /* AddTaskViewController.xib */; };
+		155200DB197DE14500816766 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200D9197DE14500816766 /* LoginViewController.m */; };
+		155200DC197DE14500816766 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200DA197DE14500816766 /* LoginViewController.xib */; };
+		155200E0197DE15300816766 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200DE197DE15300816766 /* SignupViewController.m */; };
+		155200E1197DE15300816766 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200DF197DE15300816766 /* SignupViewController.xib */; };
+		155200E8197DE16100816766 /* TaskCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200E3197DE16100816766 /* TaskCellTableViewCell.m */; };
+		155200E9197DE16100816766 /* TaskCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200E4197DE16100816766 /* TaskCellTableViewCell.xib */; };
+		155200EA197DE16100816766 /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200E6197DE16100816766 /* TaskListViewController.m */; };
+		155200EB197DE16100816766 /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200E7197DE16100816766 /* TaskListViewController.xib */; };
+		155200EF197DE96E00816766 /* UniversityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200ED197DE96E00816766 /* UniversityListViewController.m */; };
+		155200F0197DE96E00816766 /* UniversityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200EE197DE96E00816766 /* UniversityListViewController.xib */; };
 		348F17E219797BBC00385B8D /* parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348F17E119797BBC00385B8D /* parse.plist */; };
 		348F17E8197ACE2B00385B8D /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17E7197ACE2B00385B8D /* Course.m */; };
 		348F17EF197AEFC600385B8D /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17EE197AEFC600385B8D /* Task.m */; };
@@ -47,6 +59,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		155200BE197DE10400816766 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		155200BF197DE10400816766 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		155200C0197DE10400816766 /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
+		155200CE197DE10400816766 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		155200D9197DE14500816766 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		155200DA197DE14500816766 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		155200DD197DE15300816766 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		155200DE197DE15300816766 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		155200DF197DE15300816766 /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		155200E2197DE16100816766 /* TaskCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCellTableViewCell.h; sourceTree = "<group>"; };
+		155200E3197DE16100816766 /* TaskCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCellTableViewCell.m; sourceTree = "<group>"; };
+		155200E4197DE16100816766 /* TaskCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCellTableViewCell.xib; sourceTree = "<group>"; };
+		155200E5197DE16100816766 /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
+		155200E6197DE16100816766 /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
+		155200E7197DE16100816766 /* TaskListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListViewController.xib; sourceTree = "<group>"; };
+		155200EC197DE96E00816766 /* UniversityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversityListViewController.h; sourceTree = "<group>"; };
+		155200ED197DE96E00816766 /* UniversityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversityListViewController.m; sourceTree = "<group>"; };
+		155200EE197DE96E00816766 /* UniversityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityListViewController.xib; sourceTree = "<group>"; };
 		348F17E119797BBC00385B8D /* parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parse.plist; sourceTree = "<group>"; };
 		348F17E6197ACE2B00385B8D /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		348F17E7197ACE2B00385B8D /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
@@ -152,6 +182,21 @@
 		34C3CB6B19789B58008E5DCB /* StudentCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				155200E2197DE16100816766 /* TaskCellTableViewCell.h */,
+				155200E3197DE16100816766 /* TaskCellTableViewCell.m */,
+				155200E4197DE16100816766 /* TaskCellTableViewCell.xib */,
+				155200E5197DE16100816766 /* TaskListViewController.h */,
+				155200E6197DE16100816766 /* TaskListViewController.m */,
+				155200E7197DE16100816766 /* TaskListViewController.xib */,
+				155200DD197DE15300816766 /* SignupViewController.h */,
+				155200DE197DE15300816766 /* SignupViewController.m */,
+				155200DF197DE15300816766 /* SignupViewController.xib */,
+				155200D9197DE14500816766 /* LoginViewController.m */,
+				155200DA197DE14500816766 /* LoginViewController.xib */,
+				155200BE197DE10400816766 /* AddTaskViewController.h */,
+				155200BF197DE10400816766 /* AddTaskViewController.m */,
+				155200C0197DE10400816766 /* AddTaskViewController.xib */,
+				155200CE197DE10400816766 /* LoginViewController.h */,
 				34C3CB7419789B58008E5DCB /* AppDelegate.h */,
 				34C3CB7519789B58008E5DCB /* AppDelegate.m */,
 				34C3CB7719789B58008E5DCB /* Images.xcassets */,
@@ -168,6 +213,9 @@
 				348F17F6197D635C00385B8D /* SettingsViewController.h */,
 				348F17F7197D635C00385B8D /* SettingsViewController.m */,
 				348F17F8197D635C00385B8D /* SettingsViewController.xib */,
+				155200EC197DE96E00816766 /* UniversityListViewController.h */,
+				155200ED197DE96E00816766 /* UniversityListViewController.m */,
+				155200EE197DE96E00816766 /* UniversityListViewController.xib */,
 			);
 			path = StudentCompanion;
 			sourceTree = "<group>";
@@ -304,12 +352,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				487568D7197C973B00D20AD7 /* CourseAddViewController.xib in Resources */,
+				155200EB197DE16100816766 /* TaskListViewController.xib in Resources */,
+				155200E9197DE16100816766 /* TaskCellTableViewCell.xib in Resources */,
 				348F17E219797BBC00385B8D /* parse.plist in Resources */,
 				487568C8197C423500D20AD7 /* MainViewController.xib in Resources */,
 				34C3CB7019789B58008E5DCB /* InfoPlist.strings in Resources */,
 				34C3CB7819789B58008E5DCB /* Images.xcassets in Resources */,
+				155200D0197DE10400816766 /* AddTaskViewController.xib in Resources */,
+				155200F0197DE96E00816766 /* UniversityListViewController.xib in Resources */,
+				155200E1197DE15300816766 /* SignupViewController.xib in Resources */,
 				487568DC197C9BA800D20AD7 /* CourseListViewController.xib in Resources */,
 				348F17FA197D635C00385B8D /* SettingsViewController.xib in Resources */,
+				155200DC197DE14500816766 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +416,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				348F17EF197AEFC600385B8D /* Task.m in Sources */,
+				155200EA197DE16100816766 /* TaskListViewController.m in Sources */,
+				155200CF197DE10400816766 /* AddTaskViewController.m in Sources */,
+				155200EF197DE96E00816766 /* UniversityListViewController.m in Sources */,
+				155200DB197DE14500816766 /* LoginViewController.m in Sources */,
+				155200E8197DE16100816766 /* TaskCellTableViewCell.m in Sources */,
 				487568DB197C9BA800D20AD7 /* CourseListViewController.m in Sources */,
 				487568D6197C973B00D20AD7 /* CourseAddViewController.m in Sources */,
 				348F17E8197ACE2B00385B8D /* Course.m in Sources */,
@@ -371,6 +430,7 @@
 				487568C7197C423500D20AD7 /* MainViewController.m in Sources */,
 				34C3CB7219789B58008E5DCB /* main.m in Sources */,
 				34F5504B1979696700F75724 /* User.m in Sources */,
+				155200E0197DE15300816766 /* SignupViewController.m in Sources */,
 				348F17F5197B6F1600385B8D /* University.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

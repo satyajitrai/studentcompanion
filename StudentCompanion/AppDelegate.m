@@ -14,6 +14,10 @@
 #import "TaskType.h"
 #import "University.h"
 #import "MainViewController.h"
+#import "SignupViewController.h"
+#import "LoginViewController.h"
+#import "TaskListViewController.h"
+
 
 @interface AppDelegate()
 
@@ -25,7 +29,6 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setUpParse];
-    
     [self setupMainView];
     
     
@@ -101,9 +104,21 @@
 }
 
 - (void) setupMainView {
-    self.mvc = [[MainViewController alloc] init];
-    self.nc = [[UINavigationController alloc] initWithRootViewController:self.mvc];
-    self.window.rootViewController = self.nc;
+    
+    self.loginVC = [[LoginViewController alloc]init];
+    self.signupVC = [[SignupViewController alloc]init];
+    if([[PFUser currentUser] isAuthenticated]) {
+//        self.nc = [[UINavigationController alloc] initWithRootViewController:self.taskListVC];
+        self.mvc = [[MainViewController alloc] init];
+        self.nc = [[UINavigationController alloc] initWithRootViewController:self.mvc];
+    } else {
+        self.nc = [[UINavigationController alloc] initWithRootViewController:self.loginVC];
+    }
+            self.window.rootViewController = self.nc;
+    
+    
+    
+    
 }
 
 @end
