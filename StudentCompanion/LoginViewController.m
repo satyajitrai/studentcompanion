@@ -9,7 +9,6 @@
 #import "LoginViewController.h"
 #import "SignupViewController.h"
 #import "TaskListViewController.h"
-#import "MainViewController.h"
 #import <Parse/Parse.h>
 
 @interface LoginViewController ()
@@ -30,22 +29,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)onLoginTap:(id)sender {
-    [PFUser logInWithUsernameInBackground:self.userEmailAddress.text password:self.userPassword.text
+    [PFUser logInWithUsernameInBackground:self.userEmailAddress.text
+                                 password:self.userPassword.text
                                     block:^(PFUser *user, NSError *error) {
-                                        if (user) {
+                                        if (!error) {
                                             NSLog(@"User Login successful");
-//                                            [self showTaskList];
-                                            [self showMainView];
+                                            [self.delegate onLoginSuccess:(User*)user];
                                         } else {
                                             NSLog(@"User Login failed, %@", error.description);
                                         }
@@ -57,13 +54,9 @@
     [self.navigationController pushViewController:signupVC animated:YES];
 }
 
--(void) showTaskList {
-    TaskListViewController *taskListVC = [[TaskListViewController alloc]init];
-    [self.navigationController pushViewController:taskListVC animated:YES];
-}
--(void) showMainView {
-    MainViewController *mainVC = [[MainViewController alloc]init];
-    [self.navigationController pushViewController:mainVC animated:YES];
-}
+//-(void) showTaskList {
+//    TaskListViewController *taskListVC = [[TaskListViewController alloc]init];
+//    [self.navigationController pushViewController:taskListVC animated:YES];
+//}
 
 @end

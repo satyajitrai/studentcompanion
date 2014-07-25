@@ -13,13 +13,13 @@
 #import "Task.h"
 #import "TaskType.h"
 #import "University.h"
-#import "MainViewController.h"
-#import "SignupViewController.h"
 #import "LoginViewController.h"
 #import "TaskListViewController.h"
+#import "CourseListViewController.h"
+#import "SettingsViewController.h"
+#import "UniversityListViewController.h"
 
-
-@interface AppDelegate()
+@interface AppDelegate()<LoginProtocolDelegate, LogoutProtocolDelegate>
 
 @end
 
@@ -30,8 +30,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setUpParse];
     [self setupMainView];
-    
-    
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -83,35 +81,42 @@
     [Parse setApplicationId:applicationId clientKey:clientKey];
 }
 
-- (void)testCourse {
-    Course *c = [Course object];
-    c.name = @"Maths";
-    c.assignmentGradePercent = @50;
-    c.overallGpa = @9.5;
-    c.courseType = CourseTypeRegular;
-    c.quizGradePercent = @30;
-    c.finalGradePercent = @20;
-    
-    [c saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Save successful");
-        } else {
-            NSLog(@"Failed. Error: %@", error);
-        }
-    }];
+- (void) setupMainView {
+    if([[User currentUser] isAuthenticated]) {
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        CourseListViewController *cl = [[CourseListViewController alloc] init];
+        UINavigationController *nc1 = [[UINavigationController alloc] initWithRootViewController:cl];
+        nc1.tabBarItem.title = @"Courses";
+        
+        UniversityListViewController *ul = [[UniversityListViewController alloc] init];
+        UINavigationController *nc2 = [[UINavigationController alloc] initWithRootViewController:ul];
+        nc2.tabBarItem.title = @"Universities";
+        
+        TaskListViewController *tl = [[TaskListViewController alloc] init];
+        UINavigationController *nc3 = [[UINavigationController alloc] initWithRootViewController:tl];
+        nc3.tabBarItem.title = @"Tasks";
+        
+        SettingsViewController *sv = [[SettingsViewController alloc] init];
+        sv.delegate = self;
+        UINavigationController *nc4 = [[UINavigationController alloc] initWithRootViewController:sv];
+        nc4.tabBarItem.title = @"Settings";
+        
+        tabBarController.viewControllers = @[nc1, nc2, nc3, nc4];
+        self.window.rootViewController = tabBarController;
+    } else {
+        LoginViewController *loginVC = [[LoginViewController alloc]init];
+        loginVC.delegate = self;
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        self.window.rootViewController = nc;
+    }
 }
 
-- (void) setupMainView {
-    self.loginVC = [[LoginViewController alloc]init];
-    self.signupVC = [[SignupViewController alloc]init];
-    if([[PFUser currentUser] isAuthenticated]) {
-//        self.nc = [[UINavigationController alloc] initWithRootViewController:self.taskListVC];
-        self.mvc = [[MainViewController alloc] init];
-        self.nc = [[UINavigationController alloc] initWithRootViewController:self.mvc];
-    } else {
-        self.nc = [[UINavigationController alloc] initWithRootViewController:self.loginVC];
-    }
-    self.window.rootViewController = self.nc;
+- (void)onLoginSuccess:(User *)user {
+    [self setupMainView];
+}
+
+- (void) onLogout {
+    [self setupMainView];
 }
 
 @end

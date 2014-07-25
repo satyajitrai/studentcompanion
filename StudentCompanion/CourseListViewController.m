@@ -7,6 +7,7 @@
 //
 
 #import "CourseListViewController.h"
+#import "CourseAddViewController.h"
 #import <Parse/Parse.h>
 #import "User.h"
 #import "Course.h"
@@ -34,15 +35,14 @@
 
 - (void)viewDidLoad
 {
-//    NSLog(@"courselistView: view did load");
     [super viewDidLoad];
     self.courseListTableView.delegate = self;
     self.courseListTableView.dataSource = self;
-    // Do any additional setup after loading the view from its nib.
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Course" style:UIBarButtonItemStylePlain target:self action:@selector(onAddCourseButton:)];
+
     [self loadCourses];
     [self addPullToRefresh];
-    self.tabBarItem.title = @"Courses";
+//    self.tabBarItem.title = @"Courses";
 }
 
 - (void) addPullToRefresh
@@ -50,7 +50,7 @@
     refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(loadCourses) forControlEvents:UIControlEventValueChanged];
     
-    NSMutableAttributedString *refreshString = [[NSMutableAttributedString alloc] initWithString:@"Pull To Refresh"];
+    NSMutableAttributedString *refreshString = [[NSMutableAttributedString alloc] initWithString:@"Refreshing..."];
     [refreshString addAttributes:@{NSForegroundColorAttributeName : [UIColor grayColor]} range:NSMakeRange(0, refreshString.length)];
     refreshControl.attributedTitle = refreshString;
     [self.courseListTableView addSubview:refreshControl];
@@ -81,12 +81,16 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    
     Course *course = self.courses[indexPath.row];
     NSString *courseName = course.name;
     NSNumber *gpa = course.overallGpa;
     cell.textLabel.text = [NSString stringWithFormat:@"%@: GPA:%@", courseName, gpa];
     return cell;
+}
+
+- (IBAction)onAddCourseButton:(id)sender {
+    CourseAddViewController *addCourseVC = [[CourseAddViewController alloc] init];
+    [self.navigationController pushViewController:addCourseVC animated:YES];
 }
 
 @end

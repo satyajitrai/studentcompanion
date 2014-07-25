@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
+@protocol LogoutProtocolDelegate<NSObject>
+- (void) onLogout;
+@end
 
+
+@interface SettingsViewController : UIViewController
+@property (retain, nonatomic) id<LogoutProtocolDelegate> delegate;
 @end

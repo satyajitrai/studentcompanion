@@ -24,8 +24,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log out" style:UIBarButtonItemStylePlain target:self action:@selector(OnLogoutTap)];
-
     }
     return self;
 }
@@ -33,12 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadTasks];
+    self.tabBarItem.title = @"Tasks";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Task" style:UIBarButtonItemStylePlain target:self action:@selector(addTaskTap:)];
+
     [self.taskTableView registerNib:[UINib nibWithNibName:@"TaskCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"TaskCellTableViewCell"] ;
     self.taskTableView.rowHeight = 100;
     self.taskTableView.delegate = self;
     self.taskTableView.dataSource = self;
-    self.tabBarItem.title = @"Tasks";
+    
+    [self loadTasks];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,12 +61,6 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-}
-#pragma mark - User Actions
-- (void) OnLogoutTap {
-    [PFUser logOut];
-    LoginViewController *loginVC = [[LoginViewController alloc]init];
-    [self.navigationController pushViewController:loginVC animated:YES];
 }
 
 - (IBAction)addTaskTap:(id)sender {

@@ -35,6 +35,10 @@
     User *u = [User currentUser];
     _nameTextView.text = u.displayName;
     _programNameTextView.text = u.programName;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(onEdit:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onLogout:)];
+
+    self.tabBarItem.title = @"Settings";
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,16 +47,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onEdit:(UIButton *)sender {
+- (IBAction)onEdit:(UIBarButtonItem *)sender {
     if (_editMode == NO) {
         _nameTextView.enabled = YES;
         _programNameTextView.enabled = YES;
-        [sender setTitle:@"Save" forState:UIControlStateNormal];
+        [sender setTitle:@"Save"];
         _editMode = YES;
     } else {
         _nameTextView.enabled = NO;
         _programNameTextView.enabled = NO;
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        [sender setTitle:@"Edit"];
         _editMode = NO;
         
         User *u = [User currentUser];
@@ -70,6 +74,11 @@
 
 - (IBAction)onTap:(UITapGestureRecognizer *)sender {
     [self.view endEditing:YES];
+}
+
+- (IBAction)onLogout:(id)sender {
+    [User logOut];
+    [self.delegate onLogout];
 }
 
 @end
