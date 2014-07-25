@@ -19,6 +19,8 @@
 		155200EB197DE16100816766 /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200E7197DE16100816766 /* TaskListViewController.xib */; };
 		155200EF197DE96E00816766 /* UniversityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155200ED197DE96E00816766 /* UniversityListViewController.m */; };
 		155200F0197DE96E00816766 /* UniversityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200EE197DE96E00816766 /* UniversityListViewController.xib */; };
+		346650ED1982ADF30061642D /* UniversityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 346650EB1982ADF30061642D /* UniversityCell.m */; };
+		346650EE1982ADF30061642D /* UniversityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346650EC1982ADF30061642D /* UniversityCell.xib */; };
 		34862ED1197E2E0500654362 /* TargetUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = 34862ED0197E2E0500654362 /* TargetUniversity.m */; };
 		348F17E219797BBC00385B8D /* parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348F17E119797BBC00385B8D /* parse.plist */; };
 		348F17E8197ACE2B00385B8D /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17E7197ACE2B00385B8D /* Course.m */; };
@@ -76,6 +78,9 @@
 		155200EC197DE96E00816766 /* UniversityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversityListViewController.h; sourceTree = "<group>"; };
 		155200ED197DE96E00816766 /* UniversityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversityListViewController.m; sourceTree = "<group>"; };
 		155200EE197DE96E00816766 /* UniversityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityListViewController.xib; sourceTree = "<group>"; };
+		346650EA1982ADF30061642D /* UniversityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversityCell.h; sourceTree = "<group>"; };
+		346650EB1982ADF30061642D /* UniversityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversityCell.m; sourceTree = "<group>"; };
+		346650EC1982ADF30061642D /* UniversityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityCell.xib; sourceTree = "<group>"; };
 		34862ECF197E2E0500654362 /* TargetUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetUniversity.h; sourceTree = "<group>"; };
 		34862ED0197E2E0500654362 /* TargetUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetUniversity.m; sourceTree = "<group>"; };
 		348F17E119797BBC00385B8D /* parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parse.plist; sourceTree = "<group>"; };
@@ -211,6 +216,9 @@
 				155200EC197DE96E00816766 /* UniversityListViewController.h */,
 				155200ED197DE96E00816766 /* UniversityListViewController.m */,
 				155200EE197DE96E00816766 /* UniversityListViewController.xib */,
+				346650EA1982ADF30061642D /* UniversityCell.h */,
+				346650EB1982ADF30061642D /* UniversityCell.m */,
+				346650EC1982ADF30061642D /* UniversityCell.xib */,
 			);
 			path = StudentCompanion;
 			sourceTree = "<group>";
@@ -359,6 +367,7 @@
 				155200F0197DE96E00816766 /* UniversityListViewController.xib in Resources */,
 				155200E1197DE15300816766 /* SignupViewController.xib in Resources */,
 				487568DC197C9BA800D20AD7 /* CourseListViewController.xib in Resources */,
+				346650EE1982ADF30061642D /* UniversityCell.xib in Resources */,
 				348F17FA197D635C00385B8D /* SettingsViewController.xib in Resources */,
 				155200DC197DE14500816766 /* LoginViewController.xib in Resources */,
 			);
@@ -417,6 +426,7 @@
 				155200CF197DE10400816766 /* AddTaskViewController.m in Sources */,
 				155200EF197DE96E00816766 /* UniversityListViewController.m in Sources */,
 				155200DB197DE14500816766 /* LoginViewController.m in Sources */,
+				346650ED1982ADF30061642D /* UniversityCell.m in Sources */,
 				155200E8197DE16100816766 /* TaskCellTableViewCell.m in Sources */,
 				34862ED1197E2E0500654362 /* TargetUniversity.m in Sources */,
 				487568DB197C9BA800D20AD7 /* CourseListViewController.m in Sources */,

@@ -32,4 +32,6 @@ typedef NS_ENUM(NSInteger, YearType) {
 @property (assign) ProgramType programType;
 @property (retain) NSNumber *minimumGPA;
 
+- (NSString*)programTypeString;
+
 @end

@@ -26,4 +26,15 @@
     [query findObjectsInBackgroundWithBlock:block];
 }
 
+- (NSString *)programTypeString {
+    switch (self.programType) {
+        case ProgramTypeGraduate:
+            return @"Graduate";
+        case ProgramTypeHighSchool:
+            return @"High School";
+        case ProgramTypeUnderGrad:
+            return @"Undergraduate";
+    }
+}
+
 @end

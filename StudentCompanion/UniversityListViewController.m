@@ -7,6 +7,7 @@
 //
 
 #import "UniversityListViewController.h"
+#import "UniversityCell.h"
 
 @interface UniversityListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -14,6 +15,7 @@
 @end
 
 @implementation UniversityListViewController
+static NSString *UniversityCellName = @"UniversityCell";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,13 +31,14 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tabBarItem.title = @"Universities";
+    self.navigationItem.title = @"Target Universities";
+    self.tableView.rowHeight = 70;
+    [self.tableView registerNib:[UINib nibWithNibName:UniversityCellName bundle:nil] forCellReuseIdentifier:UniversityCellName];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table View
@@ -45,8 +48,13 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UniversityCell"];
-    cell.textLabel.text = [NSString stringWithFormat:@"University %d", indexPath.row];
+    UniversityCell *cell = [self.tableView dequeueReusableCellWithIdentifier:UniversityCellName];
+    University * u = [University object];
+    u.name = @"University of California";
+    u.city = @"Berkeley";
+    u.state = @"CA";
+    u.programType = ProgramTypeGraduate;
+    cell.university = u;
     return cell;
 }
 
