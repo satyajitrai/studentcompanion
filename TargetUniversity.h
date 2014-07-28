@@ -8,8 +8,8 @@
 
 #import <Parse/Parse.h>
 
-@class University;
 @class User;
+@class University;
 
 @interface TargetUniversity : PFObject<PFSubclassing>
 

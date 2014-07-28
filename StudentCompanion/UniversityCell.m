@@ -36,6 +36,7 @@
     _nameLabel.text = university.name;
     _locationLabel.text = [NSString stringWithFormat:@"%@, %@", university.city, university.state];
     _programNameLabel.text = [university programTypeString];
+    _gpaLabel.text = [NSString stringWithFormat:@"%d", university.minimumGPA];
 }
 
 @end

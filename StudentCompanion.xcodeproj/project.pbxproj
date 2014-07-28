@@ -21,6 +21,9 @@
 		155200F0197DE96E00816766 /* UniversityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155200EE197DE96E00816766 /* UniversityListViewController.xib */; };
 		346650ED1982ADF30061642D /* UniversityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 346650EB1982ADF30061642D /* UniversityCell.m */; };
 		346650EE1982ADF30061642D /* UniversityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346650EC1982ADF30061642D /* UniversityCell.xib */; };
+		346650F71982C42F0061642D /* UniversityAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346650F51982C42F0061642D /* UniversityAddViewController.m */; };
+		346650F81982C42F0061642D /* UniversityAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346650F61982C42F0061642D /* UniversityAddViewController.xib */; };
+		346650FA1986AE540061642D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346650F91986AE540061642D /* Images.xcassets */; };
 		34862ED1197E2E0500654362 /* TargetUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = 34862ED0197E2E0500654362 /* TargetUniversity.m */; };
 		348F17E219797BBC00385B8D /* parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348F17E119797BBC00385B8D /* parse.plist */; };
 		348F17E8197ACE2B00385B8D /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F17E7197ACE2B00385B8D /* Course.m */; };
@@ -35,7 +38,6 @@
 		34C3CB7019789B58008E5DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34C3CB6E19789B58008E5DCB /* InfoPlist.strings */; };
 		34C3CB7219789B58008E5DCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3CB7119789B58008E5DCB /* main.m */; };
 		34C3CB7619789B58008E5DCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3CB7519789B58008E5DCB /* AppDelegate.m */; };
-		34C3CB7819789B58008E5DCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C3CB7719789B58008E5DCB /* Images.xcassets */; };
 		34C3CB7F19789B59008E5DCB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB7E19789B59008E5DCB /* XCTest.framework */; };
 		34C3CB8019789B59008E5DCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6519789B58008E5DCB /* Foundation.framework */; };
 		34C3CB8119789B59008E5DCB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3CB6919789B58008E5DCB /* UIKit.framework */; };
@@ -81,6 +83,10 @@
 		346650EA1982ADF30061642D /* UniversityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversityCell.h; sourceTree = "<group>"; };
 		346650EB1982ADF30061642D /* UniversityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversityCell.m; sourceTree = "<group>"; };
 		346650EC1982ADF30061642D /* UniversityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityCell.xib; sourceTree = "<group>"; };
+		346650F41982C42F0061642D /* UniversityAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversityAddViewController.h; sourceTree = "<group>"; };
+		346650F51982C42F0061642D /* UniversityAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversityAddViewController.m; sourceTree = "<group>"; };
+		346650F61982C42F0061642D /* UniversityAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityAddViewController.xib; sourceTree = "<group>"; };
+		346650F91986AE540061642D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StudentCompanion/Images.xcassets; sourceTree = "<group>"; };
 		34862ECF197E2E0500654362 /* TargetUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetUniversity.h; sourceTree = "<group>"; };
 		34862ED0197E2E0500654362 /* TargetUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetUniversity.m; sourceTree = "<group>"; };
 		348F17E119797BBC00385B8D /* parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parse.plist; sourceTree = "<group>"; };
@@ -105,7 +111,6 @@
 		34C3CB7319789B58008E5DCB /* StudentCompanion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudentCompanion-Prefix.pch"; sourceTree = "<group>"; };
 		34C3CB7419789B58008E5DCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34C3CB7519789B58008E5DCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		34C3CB7719789B58008E5DCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StudentCompanion/Images.xcassets; sourceTree = "<group>"; };
 		34C3CB7D19789B59008E5DCB /* StudentCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C3CB7E19789B59008E5DCB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		34C3CB8619789B59008E5DCB /* StudentCompanionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StudentCompanionTests-Info.plist"; sourceTree = "<group>"; };
@@ -151,8 +156,8 @@
 		34C3CB5919789B58008E5DCB = {
 			isa = PBXGroup;
 			children = (
+				346650F91986AE540061642D /* Images.xcassets */,
 				348F17E119797BBC00385B8D /* parse.plist */,
-				34C3CB7719789B58008E5DCB /* Images.xcassets */,
 				34C3CB6C19789B58008E5DCB /* Supporting Files */,
 				34F550481979694E00F75724 /* API */,
 				34C3CB6B19789B58008E5DCB /* StudentCompanion */,
@@ -219,6 +224,9 @@
 				346650EA1982ADF30061642D /* UniversityCell.h */,
 				346650EB1982ADF30061642D /* UniversityCell.m */,
 				346650EC1982ADF30061642D /* UniversityCell.xib */,
+				346650F41982C42F0061642D /* UniversityAddViewController.h */,
+				346650F51982C42F0061642D /* UniversityAddViewController.m */,
+				346650F61982C42F0061642D /* UniversityAddViewController.xib */,
 			);
 			path = StudentCompanion;
 			sourceTree = "<group>";
@@ -362,11 +370,12 @@
 				155200E9197DE16100816766 /* TaskCellTableViewCell.xib in Resources */,
 				348F17E219797BBC00385B8D /* parse.plist in Resources */,
 				34C3CB7019789B58008E5DCB /* InfoPlist.strings in Resources */,
-				34C3CB7819789B58008E5DCB /* Images.xcassets in Resources */,
 				155200D0197DE10400816766 /* AddTaskViewController.xib in Resources */,
 				155200F0197DE96E00816766 /* UniversityListViewController.xib in Resources */,
 				155200E1197DE15300816766 /* SignupViewController.xib in Resources */,
 				487568DC197C9BA800D20AD7 /* CourseListViewController.xib in Resources */,
+				346650FA1986AE540061642D /* Images.xcassets in Resources */,
+				346650F81982C42F0061642D /* UniversityAddViewController.xib in Resources */,
 				346650EE1982ADF30061642D /* UniversityCell.xib in Resources */,
 				348F17FA197D635C00385B8D /* SettingsViewController.xib in Resources */,
 				155200DC197DE14500816766 /* LoginViewController.xib in Resources */,
@@ -427,6 +436,7 @@
 				155200EF197DE96E00816766 /* UniversityListViewController.m in Sources */,
 				155200DB197DE14500816766 /* LoginViewController.m in Sources */,
 				346650ED1982ADF30061642D /* UniversityCell.m in Sources */,
+				346650F71982C42F0061642D /* UniversityAddViewController.m in Sources */,
 				155200E8197DE16100816766 /* TaskCellTableViewCell.m in Sources */,
 				34862ED1197E2E0500654362 /* TargetUniversity.m in Sources */,
 				487568DB197C9BA800D20AD7 /* CourseListViewController.m in Sources */,

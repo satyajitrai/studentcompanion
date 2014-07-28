@@ -20,6 +20,7 @@
 @dynamic state;
 @dynamic programType;
 @dynamic minimumGPA;
+@dynamic logoUrl;
 
 + (void)getUniversitiesWithBlock:(void(^)(NSArray *objects, NSError *error))block {
     PFQuery *query = [PFQuery queryWithClassName:[University parseClassName]];

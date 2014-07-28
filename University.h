@@ -30,7 +30,8 @@ typedef NS_ENUM(NSInteger, YearType) {
 @property (retain) NSString *city;
 @property (retain) NSString *state;
 @property (assign) ProgramType programType;
-@property (retain) NSNumber *minimumGPA;
+@property (assign) NSInteger minimumGPA;
+@property (retain) NSString *logoUrl;
 
 - (NSString*)programTypeString;
 

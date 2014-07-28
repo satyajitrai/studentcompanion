@@ -12,9 +12,10 @@
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *programNameTextView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *programSegment;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *yearSegment;
 
-@property (assign) BOOL editMode;
-- (IBAction)onEdit:(UIButton *)sender;
+- (IBAction)onSave:(UIBarButtonItem *)sender;
 - (IBAction)onTap:(UITapGestureRecognizer *)sender;
 @end
 
@@ -24,7 +25,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _editMode = NO;
     }
     return self;
 }
@@ -35,7 +35,10 @@
     User *u = [User currentUser];
     _nameTextView.text = u.displayName;
     _programNameTextView.text = u.programName;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(onEdit:)];
+    _programSegment.selectedSegmentIndex = u.programType;
+    _yearSegment.selectedSegmentIndex = u.yearType;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(onSave:)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onLogout:)];
 
     self.tabBarItem.title = @"Settings";
@@ -47,29 +50,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onEdit:(UIBarButtonItem *)sender {
-    if (_editMode == NO) {
-        _nameTextView.enabled = YES;
-        _programNameTextView.enabled = YES;
-        [sender setTitle:@"Save"];
-        _editMode = YES;
-    } else {
-        _nameTextView.enabled = NO;
-        _programNameTextView.enabled = NO;
-        [sender setTitle:@"Edit"];
-        _editMode = NO;
-        
-        User *u = [User currentUser];
-        u.programName = _programNameTextView.text;
-        u.displayName = _nameTextView.text;
-        [u saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@", [error userInfo][@"error"]);
-            } else {
-                NSLog(@"Saved successfully");
-            }
-        }];
-    }
+- (IBAction)onSave:(UIBarButtonItem *)sender {
+    User *u = [User currentUser];
+    u.programName = _programNameTextView.text;
+    u.displayName = _nameTextView.text;
+    u.programType = _programSegment.selectedSegmentIndex;
+    u.yearType = _yearSegment.selectedSegmentIndex;
+    
+    [u saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", [error userInfo][@"error"]);
+        } else {
+            NSLog(@"Saved successfully");
+        }
+    }];
 }
 
 - (IBAction)onTap:(UITapGestureRecognizer *)sender {

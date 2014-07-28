@@ -87,19 +87,23 @@
         CourseListViewController *cl = [[CourseListViewController alloc] init];
         UINavigationController *nc1 = [[UINavigationController alloc] initWithRootViewController:cl];
         nc1.tabBarItem.title = @"Courses";
+        nc1.tabBarItem.image = [self tabImageNamed:@"course"];
         
         UniversityListViewController *ul = [[UniversityListViewController alloc] init];
         UINavigationController *nc2 = [[UINavigationController alloc] initWithRootViewController:ul];
         nc2.tabBarItem.title = @"Universities";
+        nc2.tabBarItem.image = [self tabImageNamed:@"university"];
         
         TaskListViewController *tl = [[TaskListViewController alloc] init];
         UINavigationController *nc3 = [[UINavigationController alloc] initWithRootViewController:tl];
         nc3.tabBarItem.title = @"Tasks";
+        nc3.tabBarItem.image = [self tabImageNamed:@"tasks"];
         
         SettingsViewController *sv = [[SettingsViewController alloc] init];
         sv.delegate = self;
         UINavigationController *nc4 = [[UINavigationController alloc] initWithRootViewController:sv];
         nc4.tabBarItem.title = @"Settings";
+        nc4.tabBarItem.image = [self tabImageNamed:@"settings"];
         
         tabBarController.viewControllers = @[nc1, nc2, nc3, nc4];
         self.window.rootViewController = tabBarController;
@@ -109,6 +113,16 @@
         UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:loginVC];
         self.window.rootViewController = nc;
     }
+}
+
+- (UIImage *)tabImageNamed:(NSString*)imageName {
+    UIImage * image = [UIImage imageNamed:imageName];
+    CGSize newSize = CGSizeMake(30, 30);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return [newImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
 }
 
 - (void)onLoginSuccess:(User *)user {
