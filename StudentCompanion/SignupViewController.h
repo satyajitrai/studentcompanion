@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignupViewController : UIViewController
-- (IBAction)onSignupTap:(id)sender;
+@interface SignupViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITextField *userEmailaddress;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
-
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+- (IBAction)onSignupButton:(id)sender;
+- (IBAction)backToLogin:(id)sender;
 @end

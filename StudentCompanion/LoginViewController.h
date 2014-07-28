@@ -13,9 +13,12 @@
 - (void) onLoginSuccess:(User*)user;
 @end
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (weak, nonatomic) IBOutlet UITextField *userEmailAddress;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *signupBtn;
+
 
 @property (assign, nonatomic) id<LoginProtocolDelegate> delegate;
 

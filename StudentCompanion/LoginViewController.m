@@ -12,7 +12,7 @@
 #import <Parse/Parse.h>
 
 @interface LoginViewController ()
-
+@property (nonatomic,assign) BOOL isPresenting;
 @end
 
 @implementation LoginViewController
@@ -29,6 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.signupBtn.layer.cornerRadius = 10;
+    self.signupBtn.clipsToBounds = YES;
+
+    self.loginBtn.layer.cornerRadius = 10;
+    self.loginBtn.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,12 +56,56 @@
 
 - (IBAction)onSignupBtnTap:(id)sender {
     SignupViewController *signupVC = [[SignupViewController alloc]init];
-    [self.navigationController pushViewController:signupVC animated:YES];
+    signupVC.transitioningDelegate = self;
+    [self presentViewController:signupVC animated:YES completion:nil];
 }
 
-//-(void) showTaskList {
-//    TaskListViewController *taskListVC = [[TaskListViewController alloc]init];
-//    [self.navigationController pushViewController:taskListVC animated:YES];
-//}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    self.isPresenting = YES;
+    return self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    self.isPresenting = NO;
+    return self;
+}
+
+- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator {
+    return nil;
+}
+
+- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
+    return nil;
+}
+
+// This is used for percent driven interactive transitions, as well as for container controllers that have companion animations that might need to
+// synchronize with the main animation.
+- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
+    return 3;
+}
+
+// This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
+- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
+    UIView *containerView = [transitionContext containerView];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    
+    NSLog(@"%@", toViewController);
+    NSLog(@"%@", fromViewController);
+    if (self.isPresenting) {
+        [containerView addSubview:toViewController.view];
+    [UIView transitionFromView:containerView toView:toViewController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+    }];
+    } else {
+        
+        [UIView transitionFromView:self.navigationController.view toView:fromViewController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+            [fromViewController removeFromParentViewController];
+        }];
+    }
+    
+}
 
 @end

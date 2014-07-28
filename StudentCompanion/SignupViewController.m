@@ -7,10 +7,10 @@
 //
 
 #import "SignupViewController.h"
+#import "LoginViewController.h"
 #import <Parse/Parse.h>
 
 @interface SignupViewController ()
-
 @end
 
 @implementation SignupViewController
@@ -27,8 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.signUpButton.layer.cornerRadius = 10;
+    self.signUpButton.clipsToBounds = YES;
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -36,7 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onSignupTap:(id)sender {
+- (IBAction)onSignupButton:(id)sender {
     PFUser *user = [PFUser user];
     user.username = self.userEmailaddress.text;
     user.password = self.userPassword.text;
@@ -49,4 +52,10 @@
         }
     }];
 }
+
+
+- (IBAction)backToLogin:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
