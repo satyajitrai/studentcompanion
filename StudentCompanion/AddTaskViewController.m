@@ -11,6 +11,7 @@
 
 @interface AddTaskViewController ()
 @property (nonatomic, assign) id currentResponder;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *typeControl;
 @end
 
 @implementation AddTaskViewController
@@ -52,7 +53,7 @@
     taskObject[@"name"] = self.taskName.text;
     taskObject[@"due_on"] = self.dueOn.text;
     taskObject[@"grade"] = self.grade.text;
-    taskObject[@"type_id"] = @1;
+//    taskObject[@"type_id"] = self.typeControl.selectedSegmentIndex;
     [taskObject saveInBackground];
 }
 @end

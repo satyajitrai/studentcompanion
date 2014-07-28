@@ -58,18 +58,18 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfI-OJ-LQw">
                     <rect key="frame" x="28" y="362" width="272" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.16761001280000001" green="0.16761001280000001" blue="0.16761001280000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <state key="normal" title="Already a user? Log in!">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.2222855836" green="0.1140592689" blue="0.13623016139999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="backToLogin:" destination="-1" eventType="touchUpInside" id="31T-Qu-tib"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.16761001275510201" green="0.16761001275510201" blue="0.16761001275510201" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.32533482139999997" green="0.32533482139999997" blue="0.32533482139999997" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

@@ -59,7 +59,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.16761001280000001" green="0.16761001280000001" blue="0.16761001280000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.32533482139999997" green="0.32533482139999997" blue="0.32533482139999997" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
