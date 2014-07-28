@@ -8,6 +8,8 @@
 
 #import "TargetUniversity.h"
 #import <Parse/PFObject+Subclass.h>
+#import "User.h"
+#import "University.h"
 
 @implementation TargetUniversity
 

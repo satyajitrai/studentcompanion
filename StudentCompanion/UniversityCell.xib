@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="UniversityCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-WT-7R0">
+                        <rect key="frame" x="6" y="4" width="61" height="61"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="cHd-3h-a7y"/>
+                            <constraint firstAttribute="height" constant="61" id="sY5-0i-DAn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-Kn-Jx7">
+                        <rect key="frame" x="87" y="7" width="108" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-yr-ps0">
+                        <rect key="frame" x="87" y="26" width="62" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graduate Program" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ME-UV-nbD">
+                        <rect key="frame" x="87" y="46" width="111" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="GPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjH-D7-ySq">
+                        <rect key="frame" x="288" y="8" width="27" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziP-uI-VOW">
+                        <rect key="frame" x="296" y="26" width="19" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4ME-UV-nbD" secondAttribute="bottom" constant="2" id="1e7-Xj-lOo"/>
+                    <constraint firstItem="EFd-Kn-Jx7" firstAttribute="leading" secondItem="fpW-WT-7R0" secondAttribute="trailing" constant="20" id="1y8-C0-KRD"/>
+                    <constraint firstItem="eYX-yr-ps0" firstAttribute="leading" secondItem="fpW-WT-7R0" secondAttribute="trailing" constant="20" id="3MQ-Q6-XCL"/>
+                    <constraint firstItem="eYX-yr-ps0" firstAttribute="top" secondItem="EFd-Kn-Jx7" secondAttribute="bottom" constant="2" id="4fi-0e-IHM"/>
+                    <constraint firstItem="4ME-UV-nbD" firstAttribute="top" secondItem="eYX-yr-ps0" secondAttribute="bottom" constant="4" id="6Aj-AY-r4I"/>
+                    <constraint firstItem="FjH-D7-ySq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8k7-Ch-qaR"/>
+                    <constraint firstItem="FjH-D7-ySq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EFd-Kn-Jx7" secondAttribute="trailing" constant="10" id="9os-ot-gAg"/>
+                    <constraint firstItem="fpW-WT-7R0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="FzF-4d-d3Q"/>
+                    <constraint firstItem="4ME-UV-nbD" firstAttribute="leading" secondItem="fpW-WT-7R0" secondAttribute="trailing" constant="20" id="Kc3-am-2js"/>
+                    <constraint firstItem="fpW-WT-7R0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Mya-pE-OKy"/>
+                    <constraint firstAttribute="trailing" secondItem="ziP-uI-VOW" secondAttribute="trailing" constant="5" id="P5Z-le-70t"/>
+                    <constraint firstAttribute="trailing" secondItem="FjH-D7-ySq" secondAttribute="trailing" constant="5" id="fJz-1r-mbh"/>
+                    <constraint firstItem="EFd-Kn-Jx7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="fT9-EJ-0zS"/>
+                    <constraint firstItem="ziP-uI-VOW" firstAttribute="top" secondItem="FjH-D7-ySq" secondAttribute="bottom" constant="2" id="wPg-Cy-wS3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="gpaLabel" destination="ziP-uI-VOW" id="CQq-5V-DGg"/>
+                <outlet property="locationLabel" destination="eYX-yr-ps0" id="W7p-5U-dV5"/>
+                <outlet property="logoImage" destination="fpW-WT-7R0" id="KYl-ba-thy"/>
+                <outlet property="nameLabel" destination="EFd-Kn-Jx7" id="neH-cF-psO"/>
+                <outlet property="programNameLabel" destination="4ME-UV-nbD" id="8h3-wT-caK"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="university" width="64" height="64"/>
+    </resources>
+</document>

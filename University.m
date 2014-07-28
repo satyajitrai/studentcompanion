@@ -20,10 +20,22 @@
 @dynamic state;
 @dynamic programType;
 @dynamic minimumGPA;
+@dynamic logoUrl;
 
 + (void)getUniversitiesWithBlock:(void(^)(NSArray *objects, NSError *error))block {
     PFQuery *query = [PFQuery queryWithClassName:[University parseClassName]];
     [query findObjectsInBackgroundWithBlock:block];
+}
+
+- (NSString *)programTypeString {
+    switch (self.programType) {
+        case ProgramTypeGraduate:
+            return @"Graduate";
+        case ProgramTypeHighSchool:
+            return @"High School";
+        case ProgramTypeUnderGrad:
+            return @"Undergraduate";
+    }
 }
 
 @end

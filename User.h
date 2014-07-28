@@ -16,10 +16,13 @@
 
 @property (retain) NSString *displayName;
 @property (assign) ProgramType programType;
-@property (assign) NSString *programName;
-@property (assign) NSString *yearType;
+@property (retain) NSString *programName;
+@property (assign) YearType yearType;
 
-- (void)getCoursesWithBlock:(void(^)(NSArray *objects, NSError *error))block;
+- (void)getCoursesWithBlock:(void(^)(NSArray *courses, NSError *error))block;
 - (void)addCourse:(Course *)course withBlock:(void(^)(BOOL succeeded, NSError *error))block;
+
+- (void)getUniversitiesWithBlock:(void(^)(NSArray *universities, NSError *error))block;
+- (void)addUniversity:(University *)university withBlock:(void(^)(BOOL succeeded, NSError *error))block;
 
 @end
