@@ -55,6 +55,7 @@
     taskObject.dueDate = self.dueOn.text;
     taskObject.grade = self.grade.text;
     taskObject.taskType = self.typeControl.selectedSegmentIndex;
+    taskObject.user = [User currentUser];
     [taskObject saveInBackground];
     [self.navigationController popViewControllerAnimated:YES];
 }

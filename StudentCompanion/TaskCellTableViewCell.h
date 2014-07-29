@@ -11,6 +11,6 @@
 @interface TaskCellTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *taskLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dueOnLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taskTypeLabel;
 
 @end

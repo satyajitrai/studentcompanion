@@ -10,6 +10,7 @@
 #import "AddTaskViewController.h"
 #import "TaskCellTableViewCell.h"
 #import "LoginViewController.h"
+#import "Task.h"
 
 
 @interface TaskListViewController ()
@@ -24,6 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.tasks = [[NSArray alloc] init];
     }
     return self;
 }
@@ -53,12 +55,14 @@
 - (void) loadTasks {
     PFQuery *query = [PFQuery queryWithClassName:@"Task"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [query whereKey:@"user" equalTo:(User*)[User currentUser]];
         if (!error) {
+            NSLog(@"Got tasks: %d", objects.count);
             self.tasks = objects;
             [self.taskTableView reloadData];
         } else {
             // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            NSLog(@"Error getting Tasks: %@ %@", error, [error userInfo]);
         }
     }];
 }
@@ -71,9 +75,10 @@
 #pragma mark- table view methods
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TaskCellTableViewCell *taskCell = [tableView dequeueReusableCellWithIdentifier:@"TaskCellTableViewCell"];
-    
-    taskCell.dueOnLabel.text = self.tasks[indexPath.row][@"due_on"];
-    taskCell.taskLabel.text = self.tasks[indexPath.row][@"name"];
+    Task *t = self.tasks[indexPath.row];
+    taskCell.dueOnLabel.text = t.dueDate;
+    taskCell.taskLabel.text = t.name;
+    taskCell.taskTypeLabel.text = t.taskTypeString;
     return taskCell;
 }
 

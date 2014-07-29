@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import "Course.h"
+#import "User.h"
 
 typedef NS_ENUM(NSInteger, TaskType) {
     TaskTypeQuiz,
@@ -18,6 +19,7 @@ typedef NS_ENUM(NSInteger, TaskType) {
 @interface Task : PFObject <PFSubclassing>
 
 + (NSString *)parseClassName;
+- (NSString *)taskTypeString;
 
 @property (assign) TaskType taskType;
 @property (retain) Course *course;
@@ -26,4 +28,5 @@ typedef NS_ENUM(NSInteger, TaskType) {
 @property (retain) NSString *description;
 @property (retain) NSString *dueDate;
 @property (retain) NSString *grade;
+@property (retain) User *user;
 @end

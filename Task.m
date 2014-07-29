@@ -23,4 +23,16 @@
 @dynamic description;
 @dynamic dueDate;
 @dynamic grade;
+@dynamic user;
+
+- (NSString *)taskTypeString {
+    switch (self.taskType) {
+        case TaskTypeQuiz:
+            return @"Quiz";
+        case TaskTypeAssignment:
+            return @"Assignment";
+        case TaskTypeFinal:
+            return @"Final";
+    }
+}
 @end
