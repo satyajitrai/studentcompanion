@@ -100,7 +100,7 @@
     }];
     } else {
         
-        [UIView transitionFromView:self.navigationController.view toView:fromViewController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
+        [UIView transitionFromView:containerView toView:toViewController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
             [fromViewController removeFromParentViewController];
         }];

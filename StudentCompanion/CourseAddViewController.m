@@ -30,8 +30,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Class List";
-        // Custom initialization
-    }
+       self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(onAddCourse)];    }
     return self;
 }
 
@@ -51,7 +50,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onAddCourse:(id)sender {
+- (void)onAddCourse {
     NSLog(@"in add course");    
     int selectedRow = self.courseTypeControl.selectedSegmentIndex;
     
