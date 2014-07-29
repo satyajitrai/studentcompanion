@@ -39,7 +39,7 @@
     [super viewDidLoad];
     self.courseListTableView.delegate = self;
     self.courseListTableView.dataSource = self;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Course" style:UIBarButtonItemStylePlain target:self action:@selector(onAddCourseButton:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Add_button"] style:UIBarButtonItemStylePlain target:self action:@selector(onAddCourseButton:)];
     
     [self.courseListTableView registerNib:[UINib nibWithNibName:@"CourseCell" bundle:nil] forCellReuseIdentifier:@"CourseCell"] ;
     self.courseListTableView.rowHeight = 50;

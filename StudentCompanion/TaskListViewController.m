@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     self.tabBarItem.title = @"Tasks";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Task" style:UIBarButtonItemStylePlain target:self action:@selector(addTaskTap:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Add_button"] style:UIBarButtonItemStylePlain target:self action:@selector(addTaskTap:)];
 
     [self.taskTableView registerNib:[UINib nibWithNibName:@"TaskCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"TaskCellTableViewCell"] ;
     self.taskTableView.rowHeight = 70;

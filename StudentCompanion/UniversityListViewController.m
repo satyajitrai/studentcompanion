@@ -23,7 +23,7 @@ static NSString *UniversityCellName = @"UniversityCell";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addUniversity:)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Add_button"]  style:UIBarButtonItemStylePlain target:self action:@selector(addUniversity:)];
         _universities = [[NSArray alloc] init];
         [self loadUniversities];
     }
