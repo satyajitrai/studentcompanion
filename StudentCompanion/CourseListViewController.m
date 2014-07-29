@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "User.h"
 #import "Course.h"
+#import "courseCell.h"
 
 @interface CourseListViewController (){
     UIRefreshControl *refreshControl;
@@ -39,6 +40,9 @@
     self.courseListTableView.delegate = self;
     self.courseListTableView.dataSource = self;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Course" style:UIBarButtonItemStylePlain target:self action:@selector(onAddCourseButton:)];
+    
+    [self.courseListTableView registerNib:[UINib nibWithNibName:@"CourseCell" bundle:nil] forCellReuseIdentifier:@"CourseCell"] ;
+    self.courseListTableView.rowHeight = 50;
 
     [self loadCourses];
     [self addPullToRefresh];
@@ -80,11 +84,23 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    //UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     Course *course = self.courses[indexPath.row];
-    NSString *courseName = course.name;
-    NSNumber *gpa = course.overallGpa;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@: GPA:%@", courseName, gpa];
+    //NSString *courseName = course.name;
+    //NSNumber *gpa = course.overallGpa;
+    //cell.textLabel.text = [NSString stringWithFormat:@"%@: GPA:%@", courseName, gpa];
+    
+    
+    CourseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseCell"];
+    
+    cell.name.text = course.name;
+    cell.overallGPA.text = [NSString stringWithFormat:@"%@",course.overallGpa];
+    cell.assignPercent.text = [NSString stringWithFormat:@"%@",course.assignmentGradePercent];
+    cell.quizPercent.text = [NSString stringWithFormat:@"%@",course.quizGradePercent];
+    cell.finalPercent.text = [NSString stringWithFormat:@"%@",course.finalGradePercent];
+    NSString *courseTypeName = [Course nameForCourseType:course.courseType];
+    
+    cell.courseType.text = [NSString stringWithFormat:@"(%@)", courseTypeName];
     return cell;
 }
 

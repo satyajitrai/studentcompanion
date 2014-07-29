@@ -16,8 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *quizPercentText;
 
 @property (weak, nonatomic) IBOutlet UITextField *finalPercentText;
-@property (weak, nonatomic) IBOutlet UIPickerView *courseTypePickerView;
 @property (strong, nonatomic) NSMutableArray* courseTypes;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *courseTypeControl;
 
 - (IBAction)onAddCourse:(id)sender;
 - (IBAction)onTap:(id)sender;
@@ -38,15 +38,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.courseTypePickerView.dataSource = self;
-    self.courseTypePickerView.delegate = self;
     // Do any additional setup after loading the view from its nib.
     self.courseTypes = [[NSMutableArray alloc]init];
     [self.courseTypes addObject:@"   Regular   "];
     [self.courseTypes addObject:@"   Honors    "];
     [self.courseTypes addObject:@"     AP      "];
-    
-    [self.courseTypePickerView selectRow:1 inComponent:0 animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +53,7 @@
 
 - (IBAction)onAddCourse:(id)sender {
     NSLog(@"in add course");    
-    int selectedRow = [self.courseTypePickerView selectedRowInComponent:0];
+    int selectedRow = self.courseTypeControl.selectedSegmentIndex;
     
     Course *c = [Course object];
     c.name = self.courseNameText.text;
@@ -96,20 +92,5 @@
     [self.view endEditing:YES];
 }
 
-#pragma mark- methods for picker
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
-{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
-{
-    return [_courseTypes count];
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
-{
-    return [_courseTypes objectAtIndex:row];
-}
 
 @end
