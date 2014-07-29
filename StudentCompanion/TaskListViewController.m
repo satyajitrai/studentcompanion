@@ -40,7 +40,7 @@
     self.taskTableView.rowHeight = 70;
     self.taskTableView.delegate = self;
     self.taskTableView.dataSource = self;
-    
+    self.navigationItem.title = @"Tasks";
     [self loadTasks];
     [self addPullToRefresh];
 }

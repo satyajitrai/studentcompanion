@@ -47,6 +47,7 @@
     [self loadCourses];
     [self addPullToRefresh];
 //    self.tabBarItem.title = @"Courses";
+    self.navigationItem.title = @"Courses";
 }
 
 - (void) addPullToRefresh
