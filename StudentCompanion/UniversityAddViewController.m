@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *stateLabel;
 @property (weak, nonatomic) IBOutlet UITextField *gpaLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *programSegment;
+- (IBAction)onTap:(id)sender;
 @end
 
 @implementation UniversityAddViewController
@@ -56,4 +57,7 @@
     }];
 }
 
+- (IBAction)onTap:(id)sender {
+    [self.view endEditing:YES];
+}
 @end
