@@ -13,9 +13,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-WT-7R0">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbD-UV-RAM">
+                        <rect key="frame" x="0.0" y="0.0" width="79" height="69"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="69" id="3aM-Ti-1M7"/>
+                            <constraint firstAttribute="width" constant="79" id="kti-m7-8bX"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-WT-7R0">
                         <rect key="frame" x="6" y="4" width="61" height="61"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="61" id="cHd-3h-a7y"/>
                             <constraint firstAttribute="height" constant="61" id="sY5-0i-DAn"/>
@@ -60,12 +70,14 @@
                 <color key="backgroundColor" red="0.32533482139999997" green="0.32533482139999997" blue="0.32533482139999997" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4ME-UV-nbD" secondAttribute="bottom" constant="2" id="1e7-Xj-lOo"/>
+                    <constraint firstItem="xbD-UV-RAM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1hP-Bd-bt3"/>
                     <constraint firstItem="EFd-Kn-Jx7" firstAttribute="leading" secondItem="fpW-WT-7R0" secondAttribute="trailing" constant="20" id="1y8-C0-KRD"/>
                     <constraint firstItem="eYX-yr-ps0" firstAttribute="leading" secondItem="fpW-WT-7R0" secondAttribute="trailing" constant="20" id="3MQ-Q6-XCL"/>
                     <constraint firstItem="eYX-yr-ps0" firstAttribute="top" secondItem="EFd-Kn-Jx7" secondAttribute="bottom" constant="2" id="4fi-0e-IHM"/>
                     <constraint firstItem="4ME-UV-nbD" firstAttribute="top" secondItem="eYX-yr-ps0" secondAttribute="bottom" constant="4" id="6Aj-AY-r4I"/>
                     <constraint firstItem="FjH-D7-ySq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8k7-Ch-qaR"/>
                     <constraint firstItem="FjH-D7-ySq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EFd-Kn-Jx7" secondAttribute="trailing" constant="10" id="9os-ot-gAg"/>
+                    <constraint firstItem="xbD-UV-RAM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="C9H-3q-cdl"/>
                     <constraint firstItem="fpW-WT-7R0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="FzF-4d-d3Q"/>
                     <constraint firstItem="4ME-UV-nbD" firstAttribute="leading" secondItem="fpW-WT-7R0" secondAttribute="trailing" constant="20" id="Kc3-am-2js"/>
                     <constraint firstItem="fpW-WT-7R0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Mya-pE-OKy"/>

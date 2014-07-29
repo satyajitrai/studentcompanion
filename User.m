@@ -32,6 +32,7 @@
 
 - (void)getUniversitiesWithBlock:(void(^)(NSArray *universities, NSError *error))block {
     PFQuery *query = [PFQuery queryWithClassName:[University parseClassName]];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
     //[query whereKey:@"user" equalTo:(User*)self];
     
 //    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

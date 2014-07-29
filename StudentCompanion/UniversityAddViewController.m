@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cityLabel;
 @property (weak, nonatomic) IBOutlet UITextField *stateLabel;
 @property (weak, nonatomic) IBOutlet UITextField *gpaLabel;
+@property (weak, nonatomic) IBOutlet UITextField *urlLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *programSegment;
 - (IBAction)onTap:(id)sender;
 @end
@@ -45,8 +46,11 @@
     u.name = _nameLabel.text;
     u.city = _cityLabel.text;
     u.state = _stateLabel.text;
-    u.minimumGPA = _gpaLabel.text.integerValue;
+    u.minimumGPA = _gpaLabel.text.floatValue;
     u.programType = _programSegment.selectedSegmentIndex;
+    if (_urlLabel.text.length != 0) {
+        u.logoUrl = _urlLabel.text;
+    }
     
     [[User currentUser] addUniversity:u withBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded == YES) {

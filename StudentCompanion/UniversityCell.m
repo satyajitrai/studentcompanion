@@ -7,6 +7,7 @@
 //
 
 #import "UniversityCell.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface UniversityCell()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
@@ -36,7 +37,13 @@
     _nameLabel.text = university.name;
     _locationLabel.text = [NSString stringWithFormat:@"%@, %@", university.city, university.state];
     _programNameLabel.text = [university programTypeString];
-    _gpaLabel.text = [NSString stringWithFormat:@"%d", university.minimumGPA];
+    _gpaLabel.text = [NSString stringWithFormat:@"%.1f", university.minimumGPA];
+    if (university.logoUrl && (university.logoUrl.length > 0)) {
+        NSURL *url = [NSURL URLWithString:university.logoUrl];
+        [_logoImage setImageWithURL:url placeholderImage:[UIImage imageNamed:@"university"]];
+    } else {
+        _logoImage.image = [UIImage imageNamed:@"university"];
+    }
 }
 
 @end

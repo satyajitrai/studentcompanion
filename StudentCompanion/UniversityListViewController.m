@@ -38,6 +38,7 @@ static NSString *UniversityCellName = @"UniversityCell";
     self.navigationItem.title = @"Target Universities";
     self.tableView.rowHeight = 70;
     [self.tableView registerNib:[UINib nibWithNibName:UniversityCellName bundle:nil] forCellReuseIdentifier:UniversityCellName];
+    [self addPullToRefresh];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,7 +70,7 @@ static NSString *UniversityCellName = @"UniversityCell";
 - (void) addPullToRefresh
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(loadUniversities) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(refreshTable:) forControlEvents:UIControlEventValueChanged];
     
     NSMutableAttributedString *refreshString = [[NSMutableAttributedString alloc] initWithString:@"Refreshing..."];
     [refreshString addAttributes:@{NSForegroundColorAttributeName : [UIColor grayColor]} range:NSMakeRange(0, refreshString.length)];
@@ -77,13 +78,17 @@ static NSString *UniversityCellName = @"UniversityCell";
     [self.tableView addSubview:refreshControl];
 }
 
+- (void)refreshTable:(UIRefreshControl*) refresh {
+    [self loadUniversities];
+    [refresh endRefreshing];
+}
+
 - (void)loadUniversities {
     [[User currentUser] getUniversitiesWithBlock:^(NSArray *universities, NSError *error) {
-        if (!error) {
-            NSLog(@"Got Universities");
-            if (universities){
-                _universities = universities;
-            }
+        if (universities) {
+            NSLog(@"Got %d universities", universities.count);
+            self.universities = universities;
+            [self.tableView reloadData];
         } else {
             self.navigationItem.prompt = [error description];
         }
