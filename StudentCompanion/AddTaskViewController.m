@@ -8,6 +8,7 @@
 
 #import "AddTaskViewController.h"
 #import <Parse/Parse.h>
+#import "Task.h"
 
 @interface AddTaskViewController ()
 @property (nonatomic, assign) id currentResponder;
@@ -49,11 +50,12 @@
 
 - (void)onSaveTaskTap {
     [self.view endEditing:YES];
-    PFObject *taskObject = [PFObject objectWithClassName:@"Task"];
-    taskObject[@"name"] = self.taskName.text;
-    taskObject[@"due_on"] = self.dueOn.text;
-    taskObject[@"grade"] = self.grade.text;
-//    taskObject[@"type_id"] = self.typeControl.selectedSegmentIndex;
+    Task *taskObject = [Task object];
+    taskObject.name = self.taskName.text;
+    taskObject.dueDate = self.dueOn.text;
+    taskObject.grade = self.grade.text;
+    taskObject.taskType = self.typeControl.selectedSegmentIndex;
     [taskObject saveInBackground];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

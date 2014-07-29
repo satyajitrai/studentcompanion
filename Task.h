@@ -7,18 +7,23 @@
 //
 
 #import <Parse/Parse.h>
-#import "TaskType.h"
 #import "Course.h"
+
+typedef NS_ENUM(NSInteger, TaskType) {
+    TaskTypeQuiz,
+    TaskTypeAssignment,
+    TaskTypeFinal
+};
 
 @interface Task : PFObject <PFSubclassing>
 
 + (NSString *)parseClassName;
 
-@property (retain) TaskType *taskType;
+@property (assign) TaskType taskType;
 @property (retain) Course *course;
 @property (retain) NSString *name;
 @property (retain) NSString *courseId;
 @property (retain) NSString *description;
-@property (retain) NSDate *dueDate;
-@property (retain) NSNumber *grade;
+@property (retain) NSString *dueDate;
+@property (retain) NSString *grade;
 @end

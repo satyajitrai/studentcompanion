@@ -11,7 +11,6 @@
 #import "User.h"
 #import "Course.h"
 #import "Task.h"
-#import "TaskType.h"
 #import "University.h"
 #import "LoginViewController.h"
 #import "TaskListViewController.h"
@@ -70,7 +69,6 @@
     [User registerSubclass];
     [Course registerSubclass];
     [Task registerSubclass];
-    [TaskType registerSubclass];
     [University registerSubclass];
 
     // Read the parse.plist file and set up the application
