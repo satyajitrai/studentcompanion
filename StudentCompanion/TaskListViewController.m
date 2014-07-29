@@ -54,8 +54,8 @@
 
 - (void) loadTasks {
     PFQuery *query = [PFQuery queryWithClassName:@"Task"];
+    [query whereKey:@"user" equalTo:(User*)[User currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [query whereKey:@"user" equalTo:(User*)[User currentUser]];
         if (!error) {
             NSLog(@"Got tasks: %d", objects.count);
             self.tasks = objects;
