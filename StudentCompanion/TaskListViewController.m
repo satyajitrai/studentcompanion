@@ -37,11 +37,28 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Task" style:UIBarButtonItemStylePlain target:self action:@selector(addTaskTap:)];
 
     [self.taskTableView registerNib:[UINib nibWithNibName:@"TaskCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"TaskCellTableViewCell"] ;
-    self.taskTableView.rowHeight = 100;
+    self.taskTableView.rowHeight = 70;
     self.taskTableView.delegate = self;
     self.taskTableView.dataSource = self;
     
     [self loadTasks];
+    [self addPullToRefresh];
+}
+
+- (void) addPullToRefresh
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshTable:) forControlEvents:UIControlEventValueChanged];
+    
+    NSMutableAttributedString *refreshString = [[NSMutableAttributedString alloc] initWithString:@"Refreshing..."];
+    [refreshString addAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} range:NSMakeRange(0, refreshString.length)];
+    refreshControl.attributedTitle = refreshString;
+    [self.taskTableView addSubview:refreshControl];
+}
+
+- (void)refreshTable:(UIRefreshControl*) refresh {
+    [self loadTasks];
+    [refresh endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +96,7 @@
     taskCell.dueOnLabel.text = t.dueDate;
     taskCell.taskLabel.text = t.name;
     taskCell.taskTypeLabel.text = t.taskTypeString;
+    taskCell.gradeLabel.text = t.grade;
     return taskCell;
 }
 

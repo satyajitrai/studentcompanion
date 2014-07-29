@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *taskLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dueOnLabel;
 @property (weak, nonatomic) IBOutlet UILabel *taskTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *gradeLabel;
 
 @end
