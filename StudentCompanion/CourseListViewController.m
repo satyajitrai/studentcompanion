@@ -53,13 +53,18 @@
 - (void) addPullToRefresh
 {
     refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(loadCourses) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
     
     NSMutableAttributedString *refreshString = [[NSMutableAttributedString alloc] initWithString:@"Refreshing..."];
     [refreshString addAttributes:@{NSForegroundColorAttributeName : [UIColor grayColor]} range:NSMakeRange(0, refreshString.length)];
     refreshControl.attributedTitle = refreshString;
     [self.courseListTableView addSubview:refreshControl];
     
+}
+
+- (IBAction)onRefresh:(UIRefreshControl*)refresh {
+    [self loadCourses];
+    [refresh endRefreshing];
 }
 
 - (void) loadCourses{

@@ -30,7 +30,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Class List";
-       self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(onAddCourse)];    }
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(onAddCourse:)];    }
     return self;
 }
 
@@ -50,7 +50,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)onAddCourse {
+- (void)onAddCourse:(id)sender {
     NSLog(@"in add course");    
     int selectedRow = self.courseTypeControl.selectedSegmentIndex;
     
@@ -81,6 +81,7 @@
     [[User currentUser] addCourse:c withBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Saved course: %@", c);
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             NSLog(@"Failed. Error: %@", error);
         }
